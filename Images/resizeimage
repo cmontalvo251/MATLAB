@@ -1,0 +1,11 @@
+#!/bin/bash
+
+for oldfile in $1/*.jpg; do
+    echo $oldfile
+    newfile="$oldfile"_compressed.jpg
+    echo $newfile
+    convert -verbose -resize 50% $oldfile $newfile
+done
+# Copyright - Carlos Montalvo 2015
+# You may freely distribute this file but please keep my name in here
+# as the original owner
