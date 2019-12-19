@@ -1,0 +1,557 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+
+    <head>
+        <title>The New Apple iPad at ZBiddy</title>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+        <meta http-equiv="X-UA-Compatible" value="IE=8">
+        <meta name="description" content="The New Apple iPad&nbsp;16GB WiFi Black With the breakthrough Retina display, 5-megapixel iSi" />
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta http-equiv="content-language" content="en" />
+        
+        <!-- Facebook Open Graph -->
+        <meta property="og:title" content="The New Apple iPad at ZBiddy"/>
+        <meta property="og:image" content="http://static.zbiddy.com/data/images/auctions/iPad-3-4.jpg"/>
+        <meta property="og:site_name" content="ZBiddy"/>
+        <meta property="og:description" content="The New Apple iPad&nbsp;16GB WiFi Black With the breakthrough Retina display, 5-megapixel iSi"/>
+                <meta property="og:type" content="product" />
+        <meta property="og:url" content="http://www.zbiddy.com/auctions/647133-The-New-Apple-iPad"/>
+                <!-- End Open graph -->
+
+        
+        <link href="/min/?f=/js/windows/themes/default.css,/js/windows/themes/zbiddy.css,/css/style.css,/css/common.css" rel="stylesheet" type="text/css"/>
+
+        <script type="text/javascript" charset="utf-8">
+                    </script>
+
+        <!-- scriptaculous.js has been converted to its constituent loader.js files -->
+        <script type="text/javascript" src="/min/?f=/js/prototype.js,/js/watermark.js,/js/js_functions.js,/js/sa/builder.js,/js/sa/effects.js,/js/sa/controls.js,/js/sa/slider.js,/js/plugin/carousel.js,/js/windows/window.js,/js/windows/window_effects.js"></script>
+        <script src="/js/time_left.js?r=2" type="text/javascript" charset="utf-8"></script>
+
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <script type="text/javascript" charset="utf-8">
+            var finished_phrase = "Sold";
+            var currency_fromat = '$^^^^^';
+            var pic_path = "http://static.zbiddy.com";
+                            var session_username = "";
+                    </script>
+
+        
+        
+        <script type="text/javascript">
+            <!--
+            function MM_jumpMenu(targ,selObj,restore){ //v3.0
+            eval(targ+".location='/live_auctions.php?cat_id="+selObj.value+"'");
+            if (restore) selObj.selectedIndex=0;
+            }
+            //-->
+
+            // Apply watermark to every element with 'watermark' class.
+            document.observe('dom:loaded', function() {
+                $$('.watermark').each(function(el) {
+                    el.watermark();
+                    if (el.value != "") {
+                        removeWatermarks();
+                    }
+                })
+
+                setTimeout(function() {
+                    if ($("login_email")) {
+                        var onload_email = $("login_email").value;
+                        if (onload_email != "" && onload_email != "Email Address")
+                            removeWatermarks();
+                    }
+                }, 700);
+            });
+
+
+        </script>
+
+        <style>
+            /* WATERMARK component */
+            div.watermarked {
+                font-size: 12px;
+                position:absolute;
+                display: block;
+                color: #999;
+            }
+
+            .text {
+                padding: 5px;
+                margin: 5px;
+                width: 300px;
+            }
+        </style>
+        
+
+    </head>
+    <body> <div id="ajax_login" style="display: none;"><div class="zbiddy-div-close"><input type="image" src="http://static.zbiddy.com/images/ajax_login/button_close.gif" onclick="Dialog.cancelCallback(); return false;"></div><div style="text-align: center; cursor: pointer;" onclick="location.href='/'"><img src="http://static.zbiddy.com/images/logo.png"></div><div id='login_error_msg' style="color: red; font-weight: bold; display: none">&nbsp;</div><div class="zbiddy-note">In order to use this feature, you must first have an account with ZBiddy. Please login or if you do not have an account please <a href="/modify_user.php">click here to register.</a></div><div class="zbiddy-div-login-form"><form action="/ajax/ajax_login.php" method="POST" id="ajax_sign_in" style="padding: 0; margin: 0;"><input type="hidden" name="login_session_id" value="d9b4e640a048ed07f37d0d284227904e" /><input type="hidden" name="href_from" value="http://www.zbiddy.com/auctions/647133-The-New-Apple-iPad" /><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td class="zbiddy-td-distance" colspan="3"></td></tr><tr><td class="zbiddy-td-label">Email Address</td><td class="zbiddy-td-input"><input type="text" name="email" id="login_email2" value="" title="Please enter your Email address." dir="ltr" /></td><td></td></tr><tr><td class="zbiddy-td-distance" colspan="3"></td></tr><tr><td class="zbiddy-td-label">Password</td><td class="zbiddy-td-input"><input type="password" name="pwd" id="login_pwd" value="" dir="ltr" title="Please enter your password" /></td><td class="zbiddy-td-button"><input type="image" src="http://static.zbiddy.com/images/ajax_login/button_login.gif" onclick="Dialog.okCallback(); return false;"></td></tr><tr><td class="zbiddy-td-distance" colspan="3"></td></tr></table></form></div><div class="zbiddy-div-hr">&nbsp;</div><div class="zbiddy-note">Forgot your username or password? Enter your email address below and we'll send you the information you need to login.</div><div class="zbiddy-div-forgot-password-form"><form id="ajax_get_password" action="/https://www.zbiddy.com/password.php" method="post" style="margin: 0; padding: 0;"><input type="hidden" name="operation" value="get_password"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="zbiddy-td-distance" colspan="3"></td></tr><tr><td class="zbiddy-td-label">Email Address</td><td class="zbiddy-td-input"><input type="text" name="email" id="email" maxlength="150" class="required validate-email" ></td><td class="zbiddy-td-button"><input type="image" src="http://static.zbiddy.com/images/ajax_login/button_send.gif" /></td></tr><tr><td class="zbiddy-td-distance" colspan="3"></td></tr></table></form></div></div>
+
+<script>
+    
+function AjaxLogin()
+{
+    //type1 just location.href //for disable - commented one row below
+    //document.location.href="/login.php";exit;
+
+
+    //type2 for window
+    Dialog.confirm($('ajax_login').innerHTML, 
+		{
+        className:"zbiddy",
+        width:452,
+        minHeight:315,
+		zIndex: 1000,
+        okLabel: "login", 
+        cancelLabel: "cancel",
+        onOk:function(win)
+	       { 
+ 	           $('ajax_sign_in').request(
+ 		 	   {
+  		 		  onComplete: function(transport)
+                  {
+ 		 		     if(transport.responseText==1)
+		 		     {
+ 	 		 		    location.reload();
+ 	 	 		     }
+ 	 		 		 else if(transport.responseText==2)
+ 	 	 		     {
+  	 		 			SetAjaxLoginError('This Email is not registered');
+            		    return false;
+            		 }
+ 	 		 		 else if(transport.responseText==3)
+ 	 	 		     {
+  	 		 			SetAjaxLoginError('Wrong password');
+            		    return false;
+            		 }
+ 	 		 		 else if(transport.responseText==4)
+ 	 	 		     {
+  	 		 			SetAjaxLoginError('Login Error. You must verify your Email.');
+            		    return false;
+            		 }
+ 	 		 		 else
+ 	 	 		     {
+  	 		 			SetAjaxLoginError(transport.responseText);
+            		    return false;
+            		 }
+  		 		  }
+		 	    });
+		 	    return false;
+  	       }
+        });
+}
+
+function SetAjaxLoginError(ErrorText)
+{
+    $('login_error_msg').innerHTML=ErrorText; 
+    $('login_error_msg').show(); 
+    Windows.focusedWindow.updateHeight(); 
+    new Effect.Shake(Windows.focusedWindow.getId());	
+}
+
+</script>
+
+<script src="/js/validation.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+new Validation('ajax_get_password'); // OR new Validation(document.forms[0]);
+
+
+Validation.addAllThese([
+['required', 'Required field', function(v) {
+	return !Validation.get('IsEmpty').test(v);
+}],
+
+['validate-email', 'Please provide valid e-mail', function (v) {
+	return Validation.get('IsEmpty').test(v) || /\w{1,}[@][\w\-]{1,}([.]([\w\-]{1,})){1,3}$/.test(v)
+}]
+]);
+
+
+</script><table id="table_page" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><!--header--><table id="table_header" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><a href="/index.php"><img src="http://static.zbiddy.com/images/logo.png" alt="" border="0" /></a></td><td width="100%" style="padding-right: 20px;"><div class="div-ttm"><table cellspacing="0" cellpadding="0" border="0" align="right" class="table-ttm-item"><tbody><tr><td><span id="gplusone" style="position:relative;left:20px;"><g:plusone href="http://www.zbiddy.com/" callback="gaTrack('toolbar/share/google')" size="medium"></g:plusone>
+                    <script type="text/javascript">
+                      (function() {
+                        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                        po.src = 'https://apis.google.com/js/plusone.js';
+                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                      })();
+                    </script>
+                    </td><td align="right"><iframe src="//www.facebook.com/plugins/like.php?app_id=145711112177071&amp;href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FZBiddy%2F123319611080035&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe></td><td><a style='color: #555;' href='/contact-us.html'>Customer Service: 1-877-ZBIDDY-0</a></td><!-- <td><a style='color: #555;' href='/contact-us.html'>Customer Service: 1-888-406-6509</a></td> --></tr></tbody></table><table class="table-ttm-item" cellpadding="0" cellspacing="0" border="0" align="right"><tr></tr></table></div><div style="top:27px; left: 210px;" id="Connectivity_Marker_Pic" class="connectivity_100"><div class="label">Connectivity</div><div class="value" id="Connectivity_Marker">100%</div></div> <!-- for lpage1 -->
+<form action="https://www.zbiddy.com/login.php" method="post" id="user_sign_in" style="margin: 0; padding: 0;"><input type="hidden" name="login_session_id" value="d9b4e640a048ed07f37d0d284227904e" /><input type="hidden" name="href_from" value="http://www.zbiddy.com/auctions/647133-The-New-Apple-iPad" /><table class="table_reg" cellpadding="0" cellspacing="2" border="0"><tr><td class="td_reg"><input id="login_email" class="input_reg watermark" title="Email Address" name="email" type="text"  value="" onfocus="javascript:removeWatermarks()" /><!-- if(this.value=='Email address')this.value=''; --></td><td class="td_reg"><!-- <input class="input_reg" title="Password" name="pwd" type="text"  value="" onfocus=""/> --><input id="pwdwm" class="input_reg watermark" title="Password" name="pwd" type="password"  value="" onfocus=""/></td><td><input name="" type="image" src="http://static.zbiddy.com/images/button_login.gif" /></td></tr><tr><td >    <div zclass="div_reg_t1">&nbsp;Forgot Password?  <a href="/password.php"> Click Here </a></div></td><td nowrap>    <div zclass="div_reg_t2">&nbsp;Not a Member?  <a href="/modify_user.php">Sign Up Now</a></div></td><td></td></tr></table></form>
+
+<script type="text/javascript" charset="utf-8">
+    $$('.watermark').each(function(el) {
+        el.watermark();
+    });
+</script>
+</td></tr></table><!--header--><table cellpadding="0" cellspacing="0" border="0" width="1020" ><tr><td><!--menu--><div class="div_menu"><table class="table_menu_item" cellpadding="0" cellspacing="0" border="0"><tr><td><a href="/index.php" class="a-tm-home"></a></td><td><a href="javascript:AjaxLogin();" class="a-tm-my_account"></a></td><td><a href="/how_it_works.html" class="a-tm-faq"></a></td><td><a href="/modify_user.php" class="a-tm-register"></a></td><td><a href="/spinthewheel/index.php" class="a-tm-stw"></a></td><td><a href="/faq.htm" class="a-tm-help"></a></td></tr></table><table class="table_menu" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-top: 9px;"><div  onmouseover="ShowTopMenu('auction_cats_top_menu');" onmouseout="HideTopMenu('auction_cats_top_menu');" style="position: absolute;z-index: 1000;"><div class="div-select-item"><span>- Product Categories -</span></div><div id="auction_cats_top_menu" class="auction-cats" style="display: none"><ul><span onclick="location.href='/'">Auction Products</span><li onclick="location.href='/auctions.php?type=live&cat_id=7'" ><span>Apple Products</span></li><li onclick="location.href='/auctions.php?type=live&cat_id=62'" ><span>ATV's & Scooters</span></li><li onclick="location.href='/auctions.php?type=live&cat_id=49'" ><span>Audio Electronics & MP3</span></li><li onclick="location.href='/auctions.php?type=live&cat_id=57'" ><span>Bid Vouchers</span></li><li onclick="location.href='/auctions.php?type=live&cat_id=47'" ><span>Cameras & Accessories</span></li><li onclick="location.href='/auctions.php?type=live&cat_id=43'" ><span>Consoles & Video Games</span></li><li onclick="location.href='/auctions.php?type=live&cat_id=56'" ><span>Electronic Readers</span></li><li onclick="location.href='/auctions.php?type=live&cat_id=64'" ><span>Gadgets and Small Electronics</span></li><li onclick="location.href='/auctions.php?type=live&cat_id=46'" ><span>Gift Cards</span></li><li onclick="location.href='/auctions.php?type=live&cat_id=48'" ><span>Home & Garden</span></li><li onclick="location.href='/auctions.php?type=live&cat_id=51'" ><span>Jewelry & Watches</span></li><li onclick="location.href='/auctions.php?type=live&cat_id=54'" ><span>Kids & Games</span></li><li onclick="location.href='/auctions.php?type=live&cat_id=45'" ><span>Laptops & Accessories</span></li><li onclick="location.href='/auctions.php?type=live&cat_id=66'" ><span>Magazines</span></li><li onclick="location.href='/auctions.php?type=live&cat_id=52'" ><span>PC & Accessories</span></li><li onclick="location.href='/auctions.php?type=live&cat_id=59'" ><span>Precious Metals</span></li><li onclick="location.href='/auctions.php?type=live&cat_id=61'" ><span>Sporting & Accessories</span></li><li onclick="location.href='/auctions.php?type=live&cat_id=63'" ><span>Travel & Accessories</span></li><li onclick="location.href='/auctions.php?type=live&cat_id=55'" ><span>TV & Video Electronics</span></li><li onclick="location.href='/auctions.php?type=live&cat_id=50'" ><span>Wireless Phones & Accessories</span></li></ul><ul class="addon-item" onclick="location.href='/closed_auctions.php'"><span>Closed auctions</span></ul><ul class="addon-item" onclick="location.href='/auctions.php?type=future'"><span>Upcoming auctions</span></ul><div style="height: 18px; background: transparent;">&nbsp;</div></div></div>
+<script type="text/javascript" >
+
+var final_hide_menu = true;
+
+function ShowTopMenu(menu_id) {
+    $(menu_id).show();
+    final_hide_menu = false;
+}
+
+function HideTopMenu(menu_id) {
+    final_hide_menu = true;
+    setTimeout("FinalHideMenu('"+menu_id+"')", 1000);
+}
+
+function FinalHideMenu(menu_id) {
+    if(final_hide_menu) {
+        $(menu_id).hide();
+    }
+}
+</script>
+&nbsp;</td></tr></table></div><!--//menu--></td></tr><tr><td style="background: url('http://static.zbiddy.com/images/bg_page_content_content.gif') repeat-y scroll 0 0;"><!--center--><table id="table_center" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div id="auction_icons_ap_vertical"><ul><li><img src="http://static.zbiddy.com/data/images/prices/1-cent.png"alt="each bid increases price by $0.01"title="each bid increases price by $0.01" /></li><li><img src="http://static.zbiddy.com/images/icons/silver-auction.gif" alt="Silver Auction" title="Silver Auction" /></li><li><img src="http://static.zbiddy.com/images/icons/buy_now.gif" alt="Buy Now" title="Buy Now" /></li></ul></div><table cellpadding="0" cellspacing="0" border="0" class="table-inner-wide-sample" width="100%"><tr valign="top"><td class="td-inner-wide-sample-header"></td></tr><tr><td class="td-inner-wide-sample-content" height="400"><h1 class="h1-header"><div style="float: left">The New Apple iPad&nbsp;&nbsp;</div></h1><table style="position:relative;" id="table_ap_box" cellpadding="0" cellspacing="0" border="0" width="775"><tr><td class="td_ap_content" align="left"><table style="position:relative;"><tr valign="top"><td style="" valign="top" width="380" align="center"><style>
+.auction-pic-image-holder {
+	position:relative;
+	display:table;	
+	vertical-align: middle; 
+	text-align: center;
+	width: 80px; height: 59px;
+    float: left;
+}
+.auction-pic-small-arrow {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #CCC;
+}
+.auction-pic-small {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #CCC;
+}
+.auction-pic-image-holder div {
+	width:100%;
+	display:table-cell;
+	vertical-align:middle;
+	position:relative;
+	text-align:center;
+}
+
+.auction-pic-image-holder img{
+	display:inline;
+	vertical-align:middle;
+	border: 0;
+}
+
+
+</style>
+
+<!--[if lt IE 8]>
+<style type="text/css">
+.auction-pic-image-holder{overflow:hidden}
+.auction-pic-image-holder, .auction-pic-image-holder div {display:block}
+.auction-pic-image-holder div {top:50%;left:0;}
+.auction-pic-image-holder img{top:-50%;	position:relative;display:block}
+</style>
+<![endif]-->
+<table cellpadding="0" cellspacing="0" border="0" style="/*border: 1px solid #d9d5db;*/"><tr valign="middle"><td style="position:relative;" width="360" height="300" align="center" height="270"><img src="http://static.zbiddy.com/data/images/auctions/iPad-3-4.jpg" id="big_pic" alt="647133-The-New-Apple-iPad_1"  style="max-width: 360px; max-height: 310px;" /></td></tr><tr valign="top"><td align="left"><table width="100%" cellpadding="0" cellspacing="0"  style="/*border-top: 1px solid #d9d5db;*/"><tr valign="middle"><td align="center" width="114" height="105" onmouseover="AuctionPicChanege(this,'http://static.zbiddy.com/data/images/auctions/iPad-3-4.jpg');" class="auction-pic-small-arrow" style=""><img src="http://static.zbiddy.com/data/images/auctions/thumbnails/iPad-3-4.jpg" alt="647133-The-New-Apple-iPad_1" border="0"/></td><td width="9">&nbsp;</td><td align="center" width="114" height="105" onmouseover="AuctionPicChanege(this,'http://static.zbiddy.com/data/images/auctions/iPad-3-2.jpg');" class="auction-pic-small" style=""><img src="http://static.zbiddy.com/data/images/auctions/thumbnails/iPad-3-2.jpg" alt="647133-The-New-Apple-iPad_2" border="0"/></td><td width="9">&nbsp;</td><td align="center" width="114" height="105" onmouseover="AuctionPicChanege(this,'http://static.zbiddy.com/data/images/auctions/iPad-3-3.jpg');" class="auction-pic-small" style=""><img src="http://static.zbiddy.com/data/images/auctions/thumbnails/iPad-3-3.jpg" alt="647133-The-New-Apple-iPad_3" border="0"/></td></tr></table></td></tr></table><script>
+function AuctionPicChanege(Obj,PicUrl)
+{
+	Element.extend(Obj);
+	var div=Obj.childElements();
+	var img_obj=$(div[0]).childElements();
+	Element.extend(img_obj);
+	$$('.auction-pic-small-arrow').each(
+			function(item)
+			{
+				item.removeClassName('auction-pic-small-arrow');
+				item.addClassName('auction-pic-small');
+			}
+		);
+	$('big_pic').src=PicUrl;
+	//$('big_pic').alt=Obj.getAttribute('alt');
+	Obj.removeClassName('auction-pic-small');
+	Obj.addClassName('auction-pic-small-arrow');
+}
+</script></td><td valign="top"><div class="div-ap-product-info"><div class="div-left-box"><div class="div-ap-savings" id='auction_product_prices_table'><table width="100%"><tr><td width="100" style="font-size: 12px;">Retail Value:</td><td width="80" align="right" style="font-size: 12px;">$549.00</td></tr><tr><td style="font-size: 12px;">Your bids:</td><td align="right" style="font-size: 12px;">$0.00</td></tr><tr><td style="font-size: 12px;">Auction Price:</td><td align="right" style="font-size: 12px;">$1.58</td></tr><tr><td style="font-size: 12px; color: #339900;"><b>Savings:</b></td><td align="right" style="font-size: 12px; color: #339900;"><b>$547.42</b></td></tr></table></div><div class="div-ap-current-price" id="main_auction_price">$1.58</div><div class="avatar"><img id="user_avatar" alt="" src="/images/default-avatar.png" border="0"/></div><div class="div-ap-last-bidder">Last bidder: <strong id="username_main">leonard_8027</strong></div><div class="div-ap-timer"><img src="/data/images/prices/icon_clock.gif" border="0" style="vertical-align:middle"alt="The clock will continue to count down to 15 seconds, then each bid will add 15 seconds"title="The clock will continue to count down to 15 seconds, then each bid will add 15 seconds" /><span id="timeleft_main">27294</span></div><div class="div-ap-bid-now" id="bid_btn_647133"><a href="javascript:AjaxLogin();"><img src="http://static.zbiddy.com/images/auction-page-bid-now.gif" border="0"onmouseover="this.src='http://static.zbiddy.com/images/auction-page-login.gif'"onmouseout="this.src='http://static.zbiddy.com/images/auction-page-bid-now.gif'"></a></div></div><div class="div-right-box"><div class="div-ap-bidding-history" id="bids_grid"><div style="xborder:1px solid red;margin-bottom:0px !important;"><table style="border-radius:5px;background-color:#e4e4e4;border:1px solid #DCDCDC;" width="273" border="0" cellspacing="0" cellpadding="3"><tr><td style="background-color:#e4e4e4 !important;padding: 5px;" colspan='3'><strong>Bidding History</strong></td></tr><tr style="background-color:#FFFFFF;" valign="middle"><td width="69" align="center" style="color: #339900; font-weight: bold;">$1.58</td><td width="120" align="center" style="color: #339900; font-weight: bold;">leonard_8027</td><td nowrap align="center" style="padding:0 2px 0px 2px;color: #339900; font-weight: bold;">Single Bid&nbsp;</td></tr><tr style="background-color:#E4E4E4;" valign="middle"><td width="69" align="center" style="">$1.57</td><td width="120" align="center" style="">Victori_1592</td><td nowrap align="center" style="padding:0 2px 0px 2px;">Single Bid&nbsp;</td></tr><tr style="background-color:#FFFFFF;" valign="middle"><td width="69" align="center" style="">$1.56</td><td width="120" align="center" style="">leonard_8027</td><td nowrap align="center" style="padding:0 2px 0px 2px;">Single Bid&nbsp;</td></tr><tr style="background-color:#E4E4E4;" valign="middle"><td width="69" align="center" style="">$1.55</td><td width="120" align="center" style="">Victori_1592</td><td nowrap align="center" style="padding:0 2px 0px 2px;">Single Bid&nbsp;</td></tr><tr style="background-color:#FFFFFF;" valign="middle"><td width="69" align="center" style="">$1.54</td><td width="120" align="center" style="">leonard_8027</td><td nowrap align="center" style="padding:0 2px 0px 2px;">Single Bid&nbsp;</td></tr><tr style="background-color:#E4E4E4;" valign="middle"><td width="69" align="center" style="">$1.53</td><td width="120" align="center" style="">Victori_1592</td><td nowrap align="center" style="padding:0 2px 0px 2px;">Single Bid&nbsp;</td></tr><tr style="background-color:#FFFFFF;" valign="middle"><td width="69" align="center" style="">$1.52</td><td width="120" align="center" style="">leonard_8027</td><td nowrap align="center" style="padding:0 2px 0px 2px;">Single Bid&nbsp;</td></tr><tr style="background-color:#E4E4E4;" valign="middle"><td width="69" align="center" style="">$1.51</td><td width="120" align="center" style="">Victori_1592</td><td nowrap align="center" style="padding:0 2px 0px 2px;">Single Bid&nbsp;</td></tr><tr style="background-color:#FFFFFF;" valign="middle"><td width="69" align="center" style="">$1.50</td><td width="120" align="center" style="">leonard_8027</td><td nowrap align="center" style="padding:0 2px 0px 2px;">Single Bid&nbsp;</td></tr><tr style="background-color:#E4E4E4;" valign="middle"><td width="69" align="center" style="">$1.49</td><td width="120" align="center" style="">Victori_1592</td><td nowrap align="center" style="padding:0 2px 0px 2px;">Single Bid&nbsp;</td></tr><tr style="background-color:#FFFFFF;" valign="middle"><td width="69" align="center" style="">$1.48</td><td width="120" align="center" style="">bighors</td><td nowrap align="center" style="padding:0 2px 0px 2px;">Single Bid&nbsp;</td></tr><!--<tr #E4E4E4><td colspan="2" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;<b>1 Bid</b> $0.01+0 seconds</td></tr>--></table></div></div><div style="margin-top:20px;" class="div-ap-refer-a-friend"><div>
+	<a href="/modify_user.php"><img alt="" src="../data/images/Image/banner_ap_registr.gif" style="width: 265px; height: 143px;" border="0" /></a></div>
+</div></div><script type="text/javascript">LoadUrl('/ajax/ajax_get_auction_product_prices.php?auction_id=647133','auction_product_prices_table');
+                new PeriodicalExecuter(function(pe) {LoadUrl('/ajax/ajax_get_auction_product_prices.php?auction_id=647133','auction_product_prices_table');
+                }, 30);</script></div></td></tr></table>
+
+
+
+
+<script type="text/javascript">
+var auction_timer_page = new TimerLeft('timeleft_main','main_auction_price','647133');
+auction_timer_page.user_div_id = 'username_main';
+auction_timer_page.user_avatar_div_id = 'user_avatar';
+auction_timer_page.DecrementSecond();
+
+
+function CreateBidButler()
+{
+    frm = $('bidbutler_form');
+    frm.request({
+        onSuccess: function(transport) {
+            var json = transport.responseText.evalJSON();
+            alert(json.msg);
+            $('bidbutler_div').update(json.form);
+        },
+        onFailure: function(transport) {
+            var json = transport.responseText.evalJSON();
+            alert(json.msg);
+            $('bidbutler_div').update(json.form);
+        }
+    });
+}
+
+
+</script>
+<br><br><div id="buynow_block"></div><div class="div-ap-info-box" style="margin-bottom: 16px;"><div style="padding: 0 11px;"><div style="font-size: 18px; color: #215d84;border-bottom: 1px solid #cccccc; padding-bottom: 3px;">Product Details</div><p>
+	<strong>The New Apple iPad&nbsp;16GB WiFi Black</strong></p>
+<p>
+	With the breakthrough Retina display, 5-megapixel iSight camera, and ultrafast wireless, the new iPad is more immersive than ever before. Surf the web, check your email, flip through photos, watch a movie, play a game, thumb through a book or magazine, and more. iPad gives you a smarter, more intuitive, more fun way to do everyday things-and thanks to 200,000 apps in the App Store, things you can&#39;t even imagine.<sup>1</sup></p>
+<p>
+	<strong>Key Features</strong></p>
+<ul>
+	<li>
+		9.7-inch Retina display with Multi-Touch</li>
+	<li>
+		Dual-core A5X chip with quad-core graphics</li>
+	<li>
+		5MP iSight camera and FaceTime camera<sup>2</sup></li>
+	<li>
+		1080p HD video recording</li>
+	<li>
+		Up to 10 hours of battery life<sup>3</sup></li>
+	<li>
+		Built-in Wi-Fi (802.11a/b/g/n)</li>
+	<li>
+		iOS 5 and iCloud<sup>4</sup></li>
+</ul>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<table align="\&quot;center\&quot;" border="\&quot;1\&quot;" cellpadding="\&quot;0\&quot;" cellspacing="\&quot;0\&quot;" style="\&quot;width:95.0%;\&quot;" width="\&quot;95%\&quot;">
+	<tbody>
+		<tr>
+			<td>
+				<p>
+					<strong>Specifications</strong></p>
+			</td>
+			<td>
+				<p>
+					<strong>The New iPad</strong></p>
+			</td>
+			<td>
+				<p>
+					<strong>iPad 2</strong></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>
+					Capacity<sup>1</sup></p>
+			</td>
+			<td>
+				<p>
+					16GB</p>
+			</td>
+			<td>
+				<p>
+					16GB</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>
+					Display</p>
+			</td>
+			<td>
+				<p>
+					Retina display<br />
+					2048 by 1536 pixels</p>
+			</td>
+			<td>
+				<p>
+					High-resolution display<br />
+					1024 by 768 pixels</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>
+					Chip</p>
+			</td>
+			<td>
+				<p>
+					Dual-core A5X chip with<br />
+					quad-core graphics</p>
+			</td>
+			<td>
+				<p>
+					Dual-core A5 chip</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>
+					Cameras</p>
+			</td>
+			<td>
+				<p>
+					5-megapixel iSight camera<br />
+					FaceTime camera</p>
+			</td>
+			<td>
+				<p>
+					960-by-720-pixel resolution<br />
+					FaceTime camera</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>
+					Video Recording</p>
+			</td>
+			<td>
+				<p>
+					1080p HD video recording<br />
+					with stabilization</p>
+			</td>
+			<td>
+				<p>
+					720p HD video recording</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>
+					Wireless<sup>2</sup></p>
+			</td>
+			<td>
+				<p>
+					Wi-Fi</p>
+			</td>
+			<td>
+				<p>
+					Wi-Fi</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>
+					Battery Life<sup>3</sup></p>
+			</td>
+			<td>
+				<p>
+					Up to 10 hours</p>
+			</td>
+			<td>
+				<p>
+					Up to 10 hours</p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="\&quot;3\&quot;">
+				<p>
+					1 1GB = 1 billion bytes; actual formatted capacity less.<br />
+					2 Battery life varies by use and configuration. See www.apple.com/batteries for more information.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div></div><div class="div-ap-info-box"><div style="padding: 0 11px;"><div style="font-size: 14px; font-weight: bold; color: #333333; padding-bottom: 3px;">Payment & Shipping Information</div><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="background: #ebebeb; color: #555; font-size: 11px;" valign="middle"><th align="left" height="21" width="218" style="padding-left: 20px;">Payment methods</th><th align="center" width="153">Delivery cost</th><th align="left" width="272" style="padding-left: 42px;">Return</th><th align="center" width="209">Any questions?</th></tr><tr valign="top"><td align="left" style="padding-left: 15px;"><div style="float: left;"><img src="http://static.zbiddy.com/images/carts.gif" border="0" align="absmiddle" /></div><div style="padding-top: 20px; float: left; width: 125px;">Visa, MasterCard, Discover</div></td><td align="center" style="padding-top: 20px;">$18.99</td><td align="left" style="padding-left: 42px;padding-top: 20px;">Within 14 days in the original packaging</td><td align="center" style="padding-top: 20px;"><a href='/contact-us.html'>Contact Us</a></td></tr></table></div></div></td></tr></table><script type="text/javascript">LoadUrl('/ajax/ajax_get_auction_bids.php?title=647133-The-New-Apple-iPad','bids_grid');
+new PeriodicalExecuter(function(pe) {LoadUrl('/ajax/ajax_get_auction_bids.php?title=647133-The-New-Apple-iPad&unique_string='+Math.random(),'bids_grid');
+}, 15);</script><script type="text/javascript">
+function ShowSmallWindow(src, width, height)
+{
+    window.open(src, "message","toolbar=0,scrollbars=1,resizable=1,width="+width+",height="+height+",Left=100,Top=50");
+}
+</script></td></tr><tr class="td-inner-wide-sample-bottom"><td>&nbsp;</td></tr></table>
+
+</td></tr></table><!--center--><!--bottom box--><!--//bottom box--></td></tr><tr><td><img src="http://static.zbiddy.com/images/bg_page_content_bottom.gif" border="0" /></td></tr><tr><td><!--footer-->
+
+<!-- Dynamic Pixel Start -->
+<!-- Dynamic Pixel End -->
+
+
+<!--footer--><div class="div_footer"><div class="div_footer_content"><span style='float:left;' class='td_f1'><span style="padding:15px 0px;position:relative;top:-20px;">We Accept &nbsp;&nbsp;&nbsp;</span><span class="span_img"><img src="http://static.zbiddy.com/images/visa.png" alt="" border="0" /></span><span class="span_img"><img src="http://static.zbiddy.com/images/mastercard.png" alt="" border="0" /></span><span class="span_img"></span><span class="span_img"><img src="http://static.zbiddy.com/images/discover.png" alt="" border="0" /></span></span><span class='td_chat'>
+                <!-- BoldChat Live Chat Button HTML v3.00 (Type=Web,ChatButton=My Custom Chat Button,ChatWindow=My Chat Window,Website=- None -,Department=- None -) -->
+                <div style="text-align: center; white-space: nowrap;">
+                 <a href="https://livechat.boldchat.com/aid/770883618458225458/bc.chat?cwdid=6253454725904042973&amp;vr=&amp;vn=&amp;vi=&amp;ve=&amp;vp=&amp;iq=&amp;curl=" target="_blank" onclick="window.open((window.pageViewer &amp;&amp; pageViewer.link || function(link){return link;})(this.href + (this.href.indexOf('?')>=0 ? '&amp;' : '?') + 'url=' + escape(document.location.href)), 'Chat6663640118884122863', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=640,height=480');return false;">
+                  <div><script language="JavaScript" type="text/javascript"> document.write(unescape('%3Cimg alt="Live chat by BoldChat" src="' + (('https:' == document.location.protocol) ? 'https:' : 'http:') + '//cbi.boldchat.com/aid/770883618458225458/bc.cbi?cbdid=745791695833592871" border="0" /%3E')); </script></div>
+                 </a>
+                </div>
+                <!-- /BoldChat Live Chat Button HTML v3.00 -->
+
+                <!-- Bold Software Visitor Monitor HTML v3.50 (Website=www.zbiddy.com,ChatWindow=My Chat Window,ChatInvitation=My Invite Ruleset) -->
+                <script type="text/javascript">
+                  var _bcvma = _bcvma || [];
+                  _bcvma.push(["setAccountID", "770883618458225458"]);
+                  _bcvma.push(["setParameter", "WebsiteDefID", "4100724674702818038"]);
+                  _bcvma.push(["setParameter", "ChatWindowDefID", "6253454725904042973"]);
+                  _bcvma.push(["setParameter", "ChatWidth", "640"]);
+                  _bcvma.push(["setParameter", "ChatHeight", "480"]);
+                  _bcvma.push(["setParameter", "InvitationDefID", "5120168016328872012"]);
+                  _bcvma.push(["setParameter", "WindowScheme", "https"]);
+                  _bcvma.push(["pageViewed"]);
+                  (function(){
+                    var vms = document.createElement("script"); vms.type = "text/javascript"; vms.async = true;
+                    vms.src = ('https:'==document.location.protocol?'https://':'http://') + "vmss.boldchat.com/aid/770883618458225458/bc.vms3/vms.js";
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(vms, s);
+                  })();
+                </script>
+                <!-- /Bold Software Visitor Monitor HTML v3.50 -->
+
+                </span><span class='td_f2'><a rel="nofollow" href="https://www.facebook.com/pages/ZBiddy/123319611080035" target="_blank"><img src="http://static.zbiddy.com/images/facebook.png?r=2" alt="ZBiddy on Facebook" border="0" /></a>&nbsp;&nbsp;&nbsp;<a rel="nofollow" class='yt' href="http://www.youtube.com/user/OfficialZBiddy?feature=mhum" target="_blank"><img src="http://static.zbiddy.com/images/youtube.png?r=2" alt="ZBiddy Videos on YouTube" border="0" /></a>&nbsp;&nbsp;&nbsp;<a rel="nofollow" href="https://twitter.com/#!/z_Biddy" target="_blank"><img src="http://static.zbiddy.com/images/twitter.png?r=2" alt="ZBiddy's Twitter Account" border="0" /></a></span><div style="clear:both;" class='clear'></div><!-- BEGIN TFFI --><div class="footer_mid"><img style="float:left;position:relative;top:0px;" src="/images/img_7.jpg" /><div class="div_footer_text">Real Auctions, Real People, NO Bots!<br />We guarantee expedient shipping.<br />ZBiddy users have saved $1,000&#39;s!</div><div id="insureship_shield" rel="navy" style="position: relative;">&nbsp;</div></div><!-- START SCANALERT CODE --><a style='float:right;' target="_blank" href="https://www.mcafeesecure.com/RatingVerify?ref=www.zbiddy.com"><img border="0" src="//images.scanalert.com/meter/www.zbiddy.com/13.gif" alt="McAfee SECURE sites help keep you safe from identity theft, credit card fraud, spyware, spam, viruses and online scams" oncontextmenu="alert('Copying Prohibited by Law - McAfee Secure is a Trademark of McAfee, Inc.'); return false;"></a><!-- END SCANALERT CODE --><div style='height: 139px;'><!-- BEGIN: buySAFE Guarantee Seal --><script src="https://seal.buysafe.com/private/rollover/rollover.js"></script><span id="BuySafeSealSpan"></span><span id="BuySafeGuaranteeSpan"></span><script type="text/javascript">buySAFE.Hash = 'ifQg97dn7MY8VtpkxOcpjPY1sU08rEebfsTHs5SwiOhwYbKJdd976vSXLixVfWMRIsdT1A3huTa%2fcwV4PQ8E%2bg%3d%3d';buySAFE.Guarantee.email = "";WriteBuySafeSeal("BuySafeSealSpan", "GuaranteedSeal");</script><!-- END: buySAFE Guarantee Seal --></div><div style="clear:both;" class='clear'></div><div class='footer_bottom'><span class='copyright'>Penny Auction</span><span class="bottom_menu"><a href="/">Home</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/how_it_works.html">How it Works</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/terms_of_service.html">Terms of Service</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/about-Zbiddy.html">About us</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/help-for-newcomers.html">FAQ</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/privacy_policy.html">Privacy Policy</a>&nbsp;</span></div></div> <!-- end div_footer_content --></div><!--//footer-->
+
+    <!-- Server: host4.zbiddy.com -->
+<!--//footer--></td></tr></table><!--//page--></td></tr></table><map name="Map" id="Map"><area alt="" shape="rect" coords="3,58,52,177" href="#" /></map><map name="Map2" id="Map2"><area alt="" shape="rect" coords="17,55,66,185" href="#" /></map>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7400266-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- Quantcast Tag -->
+<script type="text/javascript">
+var _qevents = _qevents || [];
+
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+qacct:"p-f4MnwrBT16OzA"
+});
+</script>
+
+<noscript>
+<div style="display:none;">
+<img src="//pixel.quantserve.com/pixel/p-f4MnwrBT16OzA.gif" border="0" height="1" width="1" alt="Quantcast"/>
+</div>
+</noscript>
+<!-- End Quantcast tag -->
+
+
+<!--
+Generation time -  sec.
+Peak Memory usage - Kb
+-->
+
+    </body>
+</html>
