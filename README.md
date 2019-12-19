@@ -1,5 +1,9 @@
 MATLAB Fun Games over the years. 
 
+Also avaiable on MATLAB File EXchange
+
+[![View MATLAB on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/73729-matlab)
+
 Screen Cast Codes - If you've watched one of my youtube videos and you're looking for code from one of those videos this is the folder you need to open
 
 Tuppers - Playing with Tuppers Referential Formula
