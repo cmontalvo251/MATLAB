@@ -14,8 +14,14 @@ xdot = linspace(-10,10,100);
 [xx,xxdot] = meshgrid(x,xdot);
 
 %%%Mass Spring Damper System
-V = (k/m)*0.5*(xx).^2 + 0.5*xxdot.^2;
-Vdot = -(b/m)*xxdot.^2;
+%%%Function must be positive everywhere except the equilibrium point
+%%%At the equilibrium point it must be zero
+%V = (k/m)*0.5*(xx).^2 + 0.5*xxdot.^2;
+%xxddot = -k/m*xx - b/m*xxdot;
+%%%If Vdot is less than or equal to zero everywhere then the system
+%%%is stable at the equilibrium point. Note that Vdot must be zero
+%%%at the equilibrium point
+%Vdot = (k/m)*xx.*xxdot + xxdot.*xxddot;
 
 %%%Stable Pendulum
 %V = g/(2*L)*0.5*(xx).^2 + 0.5*xxdot.^2;
@@ -30,13 +36,26 @@ Vdot = -(b/m)*xxdot.^2;
 %Vdot = 2*g/L*xx.*xxdot-(b)*xxdot.^2;
 
 %%%Nonlinear Unstable Pendulum
-%V = g/(2*L)*0.5*(xx).^2 + 0.5*xxdot.^2;
-%Vdot = g/L*(xx.*xxdot+sin(xx).*xxdot)-(b)*xxdot.^2;
-
+V = g/(2*L)*(xx).^2 + 0.5*xxdot.^2;
+uu = m*L^2*(-g/L*(xx + sin(xx)));
+xxddot = g/L*sin(xx) - b*xxdot + uu/(m*L^2);
+Vdot = (g/L)*xx.*xxdot + xxdot.*xxddot;
 
 %%%Make V and Vdot
 figure()
 mesh(xx,xxdot,V)
+%[tout,xout] = ode45(@Derivs,[0 100],[-10;0]);
+%x = xout(:,1);
+%xdot = xout(:,2);
+%Vi = (k/m)*0.5*(x).^2 + 0.5*xdot.^2;
+%Vdot(0) = 0
+%xddot(0) = k/m*10
+%xdot(0) = 0
+%x(0) = -10
+%hold on
+%plot3(x,xdot,Vi)
+%figure()
+%plot(tout,Vi)
 figure()
 mesh(xx,xxdot,Vdot)
 
@@ -58,11 +77,11 @@ global k b m g L
 x = xvec(1);
 xdot = xvec(2);
 %%%Mass spring damper
-xdbldot = -b/m*xdot - k/m*x;
+%xdbldot = -b/m*xdot - k/m*x;
 %%%Inverted Pendulum
 %gam = -2*g/L*x;
 %u = m*L^2*gam;
-%xdbldot = g/L*x - b*xdot + u/(m*L^2);
+%xdbldot = g/L*x - b*xdot;% + u/(m*L^2);
 
 %%%%Stable Pendulum
 %xdbldot = -g/L*x - b*xdot;
@@ -71,7 +90,7 @@ xdbldot = -b/m*xdot - k/m*x;
 %xdbldot = -g/L*sin(x) - b*xdot;
 
 %%%Unstable Nonlinear Pendulum
-%u = m*L^2*(-g/L*(x + sin(x)));
-%xdbldot = g/L*sin(x) - b*xdot + u/(m*L^2);
+u = m*L^2*(-g/L*(x + sin(x)));
+xdbldot = g/L*sin(x) - b*xdot + u/(m*L^2);
 
 dxdt = [xdot;xdbldot];
