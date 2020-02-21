@@ -44,10 +44,11 @@ Vdot = (g/L)*xx.*xxdot + xxdot.*xxddot;
 %%%Make V and Vdot
 figure()
 mesh(xx,xxdot,V)
-%[tout,xout] = ode45(@Derivs,[0 100],[-10;0]);
+%[tout,xout] = ode45(@Derivs,[0 100],[0;2]);
 %x = xout(:,1);
 %xdot = xout(:,2);
 %Vi = (k/m)*0.5*(x).^2 + 0.5*xdot.^2;
+%Vi = g/(2*L)*0.5*(x).^2 + 0.5*xdot.^2;
 %Vdot(0) = 0
 %xddot(0) = k/m*10
 %xdot(0) = 0
@@ -57,6 +58,10 @@ mesh(xx,xxdot,V)
 %figure()
 %plot(tout,Vi)
 figure()
+mesh(xx,xxdot,Vdot)
+figure()
+Vdot(Vdot < 0) = -1;
+Vdot(Vdot > 0) = 1;
 mesh(xx,xxdot,Vdot)
 
 %%%Phase Portrait
