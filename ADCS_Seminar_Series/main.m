@@ -11,7 +11,7 @@ disp('Simulation Started')
 
 %%%Setup the IGRF Model
 disp(['You must download the igrf model from MathWorks in order to' ...
-      ' use this software'
+      ' use this software'])
 disp('https://www.mathworks.com/matlabcentral/fileexchange/34388-international-geomagnetic-reference-field-igrf-model')
 addpath 'igrf/'
 
@@ -94,8 +94,8 @@ set(fig2,'color','white')
 plot(tout,BxIout,'b-','LineWidth',2)
 hold on
 grid on
-plot(tout,ByIout,'g-','LineWidth',2)
-plot(tout,BzIout,'r-','LineWidth',2)
+plot(tout,ByIout,'y-','LineWidth',2)
+plot(tout,BzIout,'g-','LineWidth',2)
 xlabel('Time (sec)')
 ylabel('Mag Field (nT)')
 legend('X','Y','Z')
