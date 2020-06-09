@@ -11,7 +11,8 @@ disp('Simulation Started')
 
 %%%Setup the IGRF Model
 disp(['You must download the igrf model from MathWorks in order to' ...
-      ' use this software')
+      ' use this software'
+disp('https://www.mathworks.com/matlabcentral/fileexchange/34388-international-geomagnetic-reference-field-igrf-model')
 addpath 'igrf/'
 
 %%%Get Planet Parameters
