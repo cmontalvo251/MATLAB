@@ -10,6 +10,8 @@ global BxI ByI BzI
 disp('Simulation Started')
 
 %%%Setup the IGRF Model
+disp(['You must download the igrf model from MathWorks in order to' ...
+      ' use this software')
 addpath 'igrf/'
 
 %%%Get Planet Parameters
