@@ -1,8 +1,7 @@
 function dstatedt = Satellite(t,state)
 %%%stateinitial = [x0;y0;z0;xdot0;ydot0;zdot0];
 global BB invI I m nextMagUpdate lastMagUpdate lastSensorUpdate 
-global nextSensorUpdate BfieldMeasured pqrMeasured BfieldNav pqrNav
-global BfieldNavPrev pqrNavPrev
+global nextSensorUpdate BfieldMeasured pqrMeasured
 x = state(1);
 y = state(2);
 z = state(3);
@@ -51,28 +50,17 @@ if t >= lastMagUpdate
     BB = BB*1e-9;
 end
 
-
 if t >= lastSensorUpdate
-    %%%%SENSOR BLOCK
     lastSensorUpdate = lastSensorUpdate + nextSensorUpdate;
     [BfieldMeasured,pqrMeasured] = Sensor(BB,pqr); 
-    
-    %%%NAVIGATION BLOCK
-    [BfieldNav,pqrNav] = Navigation(BfieldMeasured,pqrMeasured);   
 end
-
-
-%%%CONTROL BLOCK
-current = Control(BfieldNav,pqrNav);
-magtorquer_params
-muB = current*n*A;
-
-%%%Magtorquer Model
-LMN_magtorquers = cross(muB,BB);
 
 %%%Translational Dynamics
 F = Fgrav;
 accel = F/m;
+
+%%%Magtorquer Model
+LMN_magtorquers = [0;0;0];
 
 %%%Rotational Dynamics
 H = I*pqr;

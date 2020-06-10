@@ -58,21 +58,16 @@ if t >= lastSensorUpdate
     [BfieldMeasured,pqrMeasured] = Sensor(BB,pqr); 
     
     %%%NAVIGATION BLOCK
-    [BfieldNav,pqrNav] = Navigation(BfieldMeasured,pqrMeasured);   
+    [BfieldNav,pqrNav] = Navigation(BfieldMeasured,pqrMeasured);
 end
 
-
-%%%CONTROL BLOCK
-current = Control(BfieldNav,pqrNav);
-magtorquer_params
-muB = current*n*A;
-
-%%%Magtorquer Model
-LMN_magtorquers = cross(muB,BB);
 
 %%%Translational Dynamics
 F = Fgrav;
 accel = F/m;
+
+%%%Magtorquer Model
+LMN_magtorquers = [0;0;0];
 
 %%%Rotational Dynamics
 H = I*pqr;

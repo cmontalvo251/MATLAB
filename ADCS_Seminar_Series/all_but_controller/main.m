@@ -54,7 +54,7 @@ state = [x0;y0;z0;xdot0;ydot0;zdot0;q0123_0;p0;q0;r0];
 
 %%%Need time window
 period = 2*pi/sqrt(mu)*semi_major^(3/2);
-number_of_orbits = 12;
+number_of_orbits = 1;
 tfinal = period*number_of_orbits;
 timestep = 1;
 tout = 0:timestep:tfinal;
@@ -91,7 +91,7 @@ for idx = 1:length(tout)
     stateout(idx,:) = state';
     
     if tout(idx) > lastPrint
-        disp(['Time = ',num2str(tout(idx)),' out of ',num2str(tfinal)])
+        disp(['Time = ',num2str(tout(idx))])
         lastPrint = lastPrint + next;
     end
     
