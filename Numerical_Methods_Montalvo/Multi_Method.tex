@@ -1,0 +1,216 @@
+\subsection{Output Error Method}
+
+\begin{enumerate}
+
+\item{\bf Output Error Method}
+
+Newton-Raphson works great when you have one output and one variable
+trying to be determined using a direct correlation. For example, let's
+assume I place an aircraft in a wind tunnel and I vary the wind
+tunnel speed while changing the angle of attack such that Lift is
+equal to Weight. I have a load sensor on board that measures Drag such
+that I can plot Drag as a function of velocity. Explicitly I
+would have $D = f(V)$. Using this function, I could compute the
+drag coefficient using the simple formula. 
+
+\begin{equation}
+D_i = \frac{1}2\rho V_i^2 S C_{Di}
+\end{equation}
+
+The subscript $i$ is in the formula above because I have multiple
+velocity and drag readings. The method defined above is typical for
+operators in a wind tunnel. Using the drag as a function of velocity
+you can obtain the drag coefficient as a function of velocity. Using
+the drag coefficient I could also find the speed for minimum drag
+using the standard Newton-Raphson technique.
+
+\begin{equation}
+V_{i+1} = V_i - \frac{f'(V_i)}{f''(V_i)}
+\end{equation}
+
+The issue is that you can only obtain the drag coefficient and nothing
+else using a wind tunnel. The reason for this is that the aircraft in
+the wind tunnel is static and you can only measure certain
+coefficients at a time. For example, you could measure lift as well
+and estimate the lift coefficient but let's assume you want damping
+coefficients. To do this you need to use the output error method.
+Let's assume instead that I actually fly the airplane and instead of
+measuring velocity and drag, I measure time and distance. Thus I have
+$x=f(t)$. Here, I want to find the drag coefficient but notice that I
+do not have have the drag anymore. Thus, I can't use Newton-Raphson
+technique explicitly but with some massaging I can cast the problem
+into a better form. First if we assume the aircraft flies in one
+dimension I can write the equations of motion of the aircraft to be
+
+\begin{equation}
+\ddot{\tilde{x}} = -\frac{1}{2m}\rho \dot{\tilde{x}}^2 S \tilde{C}_D
+\end{equation}
+
+Notice, here that suddenly our drag coefficient pops up. What we can
+do then is create an initial guess for our drag coefficient, then use
+a numerical integration technique to get an estimate for x. Using this
+we can actually create an error estimate as a function of time.
+
+\begin{equation}
+\tilde{E}(t) = x(t) - \tilde{x}(t)
+\end{equation}
+
+from here we can create an average error square estimate such that
+
+\begin{equation}
+J = \frac{1}N\sum\limits_{i=1}^N |\tilde{E}(t_i)|^2
+\end{equation}
+
+Let's recap all we've done. We now have an error estimate $J$
+which is a function of our drag estimate $\tilde{C}_D$. Formally we have
+$J=f(\tilde{C}_D)$. Typically J is called a cost function. If we choose
+$\tilde{C}_D$ that is the same as the actual value of $C_D$ then we
+would have a cost of 0. This is our ideal situation. It might be
+tempting to simply use a root finding method but in fact we actually
+want to minimize J. Often times we cannot reach a zero cost given
+modeling errors, truncation errors, sensor errors, and round off
+errors. However we can still estimate $C_D$ using the recursive
+algorithm as defined in the Newton-Raphson method.
+
+\begin{equation}
+\tilde{C}_{D,i+1} = \tilde{C}_{D,i} - \frac{J'(\tilde{C}_{D,i})}{J''(\tilde{C}_{D,i})}
+\end{equation}
+
+Note that the first and second derivatives of the cost function must
+be computed numerically. This is a very involved process with multiple
+parts from this course. This entire method is called the Output Error
+Method.
+
+\item {\bf Example}
+
+This assignment will involve the students splitting into groups to
+write codes that perform the Output Error Method. The Output Error
+Method is a way to solve for unknowns where there is no analytical
+solution available. For example, let us examine the parachute in free
+fall. The equations of motion are
+
+\begin{equation}\nonumber
+\ddot{z} = -g + \frac{1}{2m}\rho\dot{z}^2SC_D
+\end{equation}
+
+This equation can be simulated on a modest computer assuming all
+parameters are known. Assume for the moment that the data $z(t)$ has
+been given in a table format. Then assume that the initial conditions
+and all parameters except $C_D$ are given:
+\ \\
+
+\begin{center}\begin{tabular}{l l l l l l}
+$z_0$ = 100 m & $\dot{z}_0$ = 0 m/s & g = 9.81 $m/s^2$ & $\rho$ =
+    1.225 $kg/m^3$ & S = 1 $m^2$ & m = 10 kg
+\end{tabular}\end{center}
+
+The question then is how to solve for the drag coefficient $C_D$. To
+do this the output error method is used. 
+
+\begin{enumerate}
+
+\item The method starts with an initial guess $\tilde{C_D}$.
+
+\item This initial guess can be used to obtain $\tilde{z}$.
+
+\item The total error between the computed value $\tilde{z}$ and the
+  measured data from the input file $z$ can be computed using the
+  equation below.
+
+  \begin{equation}
+    E = \frac{1}N\sum\limits_{i=1}^N (z(t_i)-\tilde{z}(t_i))^2
+  \end{equation}
+  
+  The goal then naturally is to perform an optimization technique and
+  compute $\tilde{C_D}$ such that the error drops to zero or at least
+  a minimum.
+
+ \item To minimize this problem the Newton-Raphson technique is used
+   such that
+
+   \begin{equation}
+     \tilde{C}_{D,i+1} = \tilde{C}_{D,i} - \frac{E'(\tilde{C}_{D,i})}{E''(\tilde{C}_{D,i})}
+   \end{equation}
+
+   Obviously the first and second derivatives will need to be computed numerically.
+
+\end{enumerate}
+
+To solve this problem the students will break into groups of 6 or 7. Each
+member of the group will have to complete one of the codes
+below. Built in MATLAB functions are allowed unless noted specifically
+in the text. Note that the group may opt to work as a team
+on certain sections of the code.
+
+\begin{enumerate}
+
+\item function [t,z] = readdata(filename), this function will use the
+  dlmread() command to read the text file of data provided and return
+  the t vector, z vector and the timestep used to generate the data.
+
+\item function ploteverything(t,z,ztilde), this function will take a
+  vector t, z and ztilde and plot everything in a nice pretty graph
+
+\item function zdot = Derivs(t,z,CDtilde), this function will compute the
+  derivative of z for a given value of CDtilde. Remember that z will
+  be a vector containing $z$ and $\dot{z}$ thus zdot will be a
+  vector containing $\dot{z}$ and $\ddot{z}$ 
+
+\item function [ttilde,ztilde] = RK4(CDtilde), this function will take
+  a value of the drag coefficient and use the RK4 method to compute
+  the height of the parachute as a function of time. Note that you
+  need to make sure you use the same timestep as the one used in the
+  data set provided. You may not use the ode45() function.
+
+\item function E = compute\_error(CDtilde,z), this function will
+  compute the total error between the estimated height ztilde and the
+  actual height z.
+
+\item function fprime = Eprime(CDtilde,z), this function will compute
+  the first derivative of the error function at the value of
+  CDtilde. Remember that you will have to choose the value of
+  $\Delta$. 
+
+\item function fdblprime = Edoubleprime(CDtilde,z), this function will
+  compute the second derivative of the error function at the value of
+  CDtilde. Again you must choose $\Delta$
+
+\item function main(), this function will perform the optimization. I
+  have written this part of the code for you.
+
+\begin{framed}
+
+function main()
+
+filename = 'drc\_data.txt';
+
+[t,z] = readdata(filename);
+
+CDtilde = 0.1;
+
+Ei = compute\_error(CDtilde,z);
+
+while abs(Ei) $>$ 1e-2
+
+~~~~~~CDtilde = CDtilde - Eprime(CDtilde,z)/Edoubleprime(CDtilde,z);
+
+~~~~~~Ei = compute\_error(CDtilde,z);
+
+end
+
+[ttilde,ztilde] = RK4(CDtilde);
+
+ploteverything(t,z,ztilde);
+
+\end{framed}
+
+\end{enumerate}
+
+The winning team must solve for $C_D$ and email the instructor a graph
+showing z and ztilde on top of each other. The first team to correctly
+email the instructor with the value of $C_D$ and the correct graph
+will get a prize. Ready go!
+
+\end{enumerate}
+
+

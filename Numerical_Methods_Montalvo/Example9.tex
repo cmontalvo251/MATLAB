@@ -1,0 +1,66 @@
+\subsection{Example Problems}
+
+\begin{enumerate}
+
+\item Write an interpolation program that will create Linear Splines
+  for your data set. You merely need to compute the point slope form
+  equations for every data point. Use your splines to compute the
+  value of ystar. 
+
+  \begin{framed}
+    \textcolor{blue}{function} ystar = myinterp(X,Y,xstar)
+  \end{framed}
+
+  Note, X is a vector of data points and Y is a vector of sampled
+  points occuring at the values of X. Test your code using the
+  table of data below. Let xstar = 1.5, 3.5 and 5.5. Again make your
+  code general enough to handle any number of data points. 
+
+  \begin{equation}\nonumber
+    \begin{matrix}
+      K-value & Pressure \\
+      7.5 & 0.635\\
+      5.58 & 1.035\\
+      4.35 & 1.435\\
+      3.55 & 1.835\\
+      2.97 & 2.235\\
+      2.53 & 2.635\\
+      2.2 & 3.035\\
+      1.93 & 3.435\\
+      1.7 & 3.835\\
+      1.46 & 4.235\\
+      1.28 & 4.635\\
+      1.11 & 5.035\\
+      1.0 & 4.435\\
+    \end{matrix}
+  \end{equation}
+
+\item Edit your code from problem 1 and use polynomial
+  interpolation instead of linear splines. Use the entire data set to
+  compute the polynomial fit. Feel free to use an expansion point. It
+  is entirely up to you. Your function header will look like this. 
+
+  \begin{framed}
+    \textcolor{blue}{function} ystar = interpoly(X,Y,xstar,N)
+  \end{framed}
+
+  All inputs are the same except N is now the order of the
+  approximation. Thus if N=0 you use a zero order method and if N=1
+  you use a linear approximation. Test your code using the data
+  below and set N=1, did you get something different than problem 1?
+  Explain why if so. Then set N=2. What do you get? Test it using the
+  same values of xstar in problem 1.
+
+\item Problem 2 from last weeks homework could technically be used as
+  a 2-D polynomial interpolation method. 
+
+  \begin{equation}\nonumber
+    z = a_0 + a_1sin(2x) + a_2sin(2y)
+  \end{equation}
+
+  In this problem, you were given X,Y, and Z and you found $A^*$. Use
+  this fit to compute $z^*$ for $x^*=1,y^*=1$ and compare it to a
+  simple 2-D linear interpolation method. Explain the difference in
+  your answers. 
+
+\end{enumerate}

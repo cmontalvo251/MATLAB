@@ -1,0 +1,119 @@
+\subsection{Least Squares Regression - Chapter 17}\label{s:lsr}
+
+\begin{enumerate}
+
+\item {\bf Linear Regression}
+
+Linear Regression attempts to fit a line to a function $f$ such that
+
+\begin{equation}
+y = f(x) \approx a_0 + a_1 x
+\end{equation}
+
+The solution of the coefficients $a_0$ and $a_1$ are found by
+minimizing the square error between the actual value of y and the estimated
+value. That is,
+
+\begin{equation}
+min[\sum\limits_{i=0}^N (y_i - a_0 - a_1 x_i)^2]
+\end{equation}
+
+The easiest way to solve this is by using gaussian elimination. First
+let $Y$ be a vector of all actual values $y_i$, X be a vector of all
+actual values $x_i$ and let $A = [a_0~a_1]^T$.
+
+\begin{equation}
+Y = [1~X] A
+\end{equation}
+
+We can then say that $H = [1~X]$. The problem above has been solved by
+Gauss. The idea is to obtain the least squares estimate of A using the
+form $Y=HA$. The solution is
+
+\begin{equation}
+A^* = (H^TH)^{-1}H^TY
+\end{equation}
+
+Notice how A has been replaced with $A^*$ this is because $H^TH$ is a
+2x2 matrix. The problem has been reduced from a system of N points to
+a 2x2 system and thus information has been lost because the order of
+the system has been truncated. 
+
+\item {\bf Polynomial Regression}
+
+The benefit of using the formula above is that it can be extended to
+include polynomials. That is assume we are trying to fit 
+
+\begin{equation}
+y \approx a_0 + a_1 x + a_2 x^2 + ... a_n x^N
+\end{equation}
+
+Using Gauss' formula we can write
+
+\begin{equation}
+Y = [1~X~X^2~...~X^N] A
+\end{equation}
+
+where $A = [a_0~a_1~a_2~...~a_N]^T$. Notice that our problem is still
+in the form $Y=HA$ and thus we can still use the formula above for
+linear regression.
+
+\item {\bf Basis Function Regression}
+
+It is even possible to use the method above to fit a function using
+basis functions. For example assume we are trying to fit
+
+\begin{equation}
+y \approx a_0 + a_1 f_1(x) + a_2 f_2(x) + ... a_n f_N(x)
+\end{equation}
+
+Again this problem can simply be written as 
+
+\begin{equation}
+Y = [1~F_1~F_2~...~F_N] A
+\end{equation}
+
+and solved just as before.
+
+\item {\bf Goodness of Fit}
+
+Often times it is beneficial to compute the goodness of fit which is a
+number that represents how well the regression curve fits the
+data. To do this we must first compute the values of y computed by the
+regression line. This is very simple once you have computed H, and
+$A^*$. 
+
+\begin{equation}
+\tilde{Y} = HA^*
+\end{equation}
+
+This is equation gives you the y-coordinates as computed by the
+regression line. Using this it is possible to compute the total
+residuals or the error in the fit and the measured/given data.
+
+\begin{equation}
+S_r = \sum\limits_{i=1}^N (Y_i-\tilde{Y}_i)^2
+\end{equation}
+
+This value will get bigger when the error between the fit and the data
+are large. However, notice that this value changes with the number of
+data points. If there are more data points the error can get quite
+large which doesn't necessarily help. Instead what we do is compute
+the error between the mean of Y which is denoted as $\bar{Y}$.
+
+\begin{equation}
+S_t = \sum\limits_{i=1}^N (Y_i-\bar{Y})^2
+\end{equation}
+
+and then use $S_r$ and $S_t$ to normalize everything and compute $r$
+which is the correlation coefficient.
+
+\begin{equation}
+r = \sqrt{\frac{S_t-S_r}{S_t}}
+\end{equation}
+
+This number can only assume values between 0 and 1. If the value of r
+is 1 then the fit is said to be perfect. If the value of r is 0 the
+fit is not good.
+
+\end{enumerate}

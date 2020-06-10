@@ -1,0 +1,90 @@
+\subsection{Example Problems}
+
+\begin{enumerate}
+
+\item Euler's method has a unique property in that it convertes a
+  continuous differential equation such as the one below 
+
+\begin{equation}
+\ddot{y} + 2\dot{y} + 4y = 0
+\end{equation}
+
+into a discrete differential equation like the form below.
+
+\begin{equation}
+\begin{matrix}
+{y}_{n+1} = {y}_n + \dot{y}_n\Delta t \\
+\dot{y}_{n+1} = \dot{y}_n + (-2\dot{y}_n - 4y)\Delta t
+\end{matrix}
+\end{equation}
+
+We've done this problem a
+million times but what we haven't done is placed Euler's method into
+the following form. 
+
+\begin{equation}
+\begin{Bmatrix}
+y_{n+1} \\ \dot{y}_{n+1} \end{Bmatrix} = \begin{bmatrix} 1 & \Delta t
+  \\ -4\Delta t & (1-2\Delta t) \end{bmatrix} \begin{Bmatrix} y_{n}
+  \\ \dot{y}_n \end{Bmatrix}
+\end{equation}
+
+In this form it is possible to use vector algebra to compute the
+solution to the differential equation. 
+
+\begin{equation}
+\vec{y}_{n+1} = A\vec{y}_n
+\end{equation}
+
+First, take your function from before spring break
+
+\textcolor{blue}{function} myEuler(deltat)
+
+and edit it to use the matrix form of Euler's method. Do the same
+thing you did last time where you vary the timestep until the graph
+does not change. However, this time compute the eigenvalues of the
+matrix A. What do you notice about eigenvalues of the matrix as the
+timestep gets smaller? What happens to the eigenvalues when the
+timestep is too big and the graph goes unstable?
+
+\item Simulate the multi body system derived in this chapter. Use the
+  following data below.
+
+  m1 = 2;\\
+  m2 = 3;\\
+  k1 = 50;\\
+  k2 = 100;\\
+  x1(t=0) = 5;\\
+  xdot1(t=0) = 0;\\
+  x2(t=0) = 10;\\
+  xdot2(t=0) = 0;\\
+  
+  You will create the solution to the differential equation using three
+  different methods. 
+
+  \begin{enumerate}
+
+    \item RK4
+
+    \item z(t) = expm(A*t)*z0 - The analytical solution
+
+    \item z(t) = V*expm(L*t)*inv(V)*z0 - Eigenvalue solution
+
+  \end{enumerate}
+
+  where V is the eigenvalues and L is the eigenvectors. You can use
+  the eig function \\
+  \ \\
+  For plotting, plot all velocities (xdot1 and xdot2) for all three
+  solutions on the same graph. All lines should be on top of each
+  other.  \\
+  \ \\
+  In addition plot all positions (x1 and x2) for all three solutions
+  on the same graph. Again, all lines should match. \\
+  \ \\
+  LIST THE EIGENVALUES OF THE A MATRIX IN YOUR REPORT. Explain what
+  the eigenvalues mean in your own words. How many eigenvalues are
+  there? Why are there so many? How many degrees of freedom does your
+  system have? 
+
+\end{enumerate}

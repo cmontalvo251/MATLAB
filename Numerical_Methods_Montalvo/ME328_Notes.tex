@@ -1,0 +1,166 @@
+%\documentclass[11pt,a4paper,twoside,openright]{book}
+\documentclass{book}
+\usepackage{amsmath}
+\usepackage{fullpage}
+\usepackage[left=1cm,right=1cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{graphicx}
+\usepackage{float}
+%\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{wrapfig}							% allows wrapping text around figures
+%\usepackage{cite}
+%\usepackage[labelfont=bf]{caption}
+\usepackage{titlesec}
+\titleformat{\section}[block]{\large\bfseries}{\thesection}{1em}{}
+\usepackage{framed}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{setspace}
+
+%\setlength{\marginparwidth}{0pt}
+
+ % Define commands to assure consistent treatment throughout document
+% \newcommand{\eqnref}[1]{(\ref{#1})}
+ \newcommand{\class}[1]{\texttt{#1}}
+ \newcommand{\package}[1]{\texttt{#1}}
+ \newcommand{\file}[1]{\texttt{#1}}
+ \newcommand{\BibTeX}{\textsc{Bib}\TeX}
+\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\thesubsection}{{\thesection}\Alph{subsection}.}
+\renewcommand{\thesubsubsection}{\alph{subsubsection}.}
+
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\beqn{\begin{matrix}}
+\def\eeqn{\end{matrix}}
+
+\begin{document}
+
+\include{Title_Page}
+
+\tableofcontents
+
+%\input{../Syllabus/Syllabus}
+
+%\input{../Syllabus/ABET_Criteria}
+
+%\input{Fun_Icebreakers}
+
+%\input{Game_Day}
+
+%%%%GROUP 1 - MATLAB
+
+\section{INTRODUCTION TO MATLAB}
+
+\input{Introduction_to_MATLAB}
+
+\input{Arrays}
+
+\input{Example3}
+
+\input{Functions}
+
+\input{Example4}
+
+\input{Loop_and_Logicals}
+
+\input{Example5}
+
+\input{Advanced_Plotting}
+
+%\input{Test1}
+
+%%%%%GROUP 0 - ENGINEERING METHODS AND COMPUTERS
+\section{INTRODUCTION TO ENGINEERING AND COMPUTERS}
+
+\input{Computers}
+
+\input{Engineering_Methods}
+
+\input{Approximations}
+
+%%%%%GROUP 2 - ROOT FINDING METHODS
+\section{ROOT FINDING METHODS}
+
+\input{Bracketing_Methods}
+
+\input{Open_Methods}
+
+\input{Example6}
+
+%\include{Test2}
+
+%\include{Project}
+
+\section{OPTIMIZATION}
+
+\input{Optimization}
+
+\input{Opt_Examples}
+
+%%%%%%%%%%GROUP 3 - LINEAR ALGEBRA
+\section{MATRIX SUPPLEMENTALS}
+
+\input{Gauss_Eliminations}
+
+\input{Gauss_Examples}
+
+\section{REGRESSION AND INTERPOLATION}
+
+\input{Least_Squares_Regression}
+
+\input{Example8}
+
+\input{Interpolation}
+
+\input{Example9}
+
+%%%%%%%%%GROUP 4 - NUMERICAL CALCULUS
+\section{NUMERICAL CALCULUS}
+
+\input{Taylor_Series}
+
+\input{Newton_Cotes}
+
+\input{Integration_of_Equations}
+
+\input{Example10}
+
+\input{Runge_Kutta}
+
+\input{Example11}
+
+\input{EigenValue_Problems}
+
+\input{Example7}
+
+\input{Numerical_Differentiation}
+
+\input{Driving_Project}
+
+\input{Multi_Method}
+
+\section{FINITE DIFFERENCE/ELEMENTS METHOD}
+
+\input{Boundary_Value_Problems}
+
+\input{Partial_Differential_Equations}
+
+\input{Finite_Element_Analysis}
+
+\input{FEA_Heat}
+
+%\include{Test3}
+
+%\include{Jigsaw_Game}
+
+%\include{Final_Exam}
+
+%\include{Schedule}
+
+\include{References}
+
+\end{document}

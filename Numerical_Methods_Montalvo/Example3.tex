@@ -1,0 +1,202 @@
+\subsection{Example Problems}
+
+1.) Using rules of mathematical precedence, solve for the following
+with MATLAB (writing it exactly as it is printed). Compare answers by
+hand. Did you get the same answer? 
+
+\begin{center}
+\begin{tabular}{l c r}
+a) 81\textrm{\^}(3/4)+5*2\textrm{\^}2/2-5 & b) 12*4/3-8\textrm{\^}2/2-15/(5-2)
+\end{tabular}
+\end{center}
+
+2.) Suppose that x=4, and y=3. Use MATLAB to compute the
+following. Check your answers by hand.
+
+\begin{equation} \nonumber
+\begin{matrix}
+a) \frac{yx^3}{x-y} & b) \frac{x^5}{y^5-1} & c) 2\pi x^2y & d) \frac{4 \sqrt{y-2}}{3x-5}
+\end{matrix}
+\end{equation}
+
+3.) Evaluate the following expressions in MATLAB for the given value
+of x. Check your work by hand.
+
+\begin{equation} \nonumber
+\begin{matrix}
+a) y=5x^3 & x=3 & b) y=2\frac{sin x}7 & x=15^0 & c) y=6x^{1/3}+\frac{2x}3 & x=27
+\end{matrix}
+\end{equation}
+
+4.) Suppose that x=-6-5i and y=4+2i. Use MATLAB to compute the
+following. Check your work by hand.
+
+\begin{equation} \nonumber
+\begin{matrix}
+a) x + y & b) x/y & c) xy
+\end{matrix}
+\end{equation}
+
+5.) Use MATLAB to calculate the following, and check your answers with
+a calculator.
+
+\begin{equation} \nonumber
+\begin{matrix}
+a) e^{{-2.3}^2}+2.86log_{10}(14) + \sqrt[6]{516} & b) \frac{5~ln 7}2 +
+\sqrt{5^2+4^3} & c) cos(\frac{3\pi}8)(sinh(\frac{3\pi}4))^2
+\end{matrix}
+\end{equation}
+
+6.) The Richter scale is a measure of the intensity of an
+earthquake. The energy E (in Joules) released by the quake is related
+to the magnitude M on the Ricther scale as follows:
+
+\begin{equation} \nonumber
+E = 10^{4.4}10^{1.5M}
+\end{equation}
+
+Use MATLAB to determine how much more energy is released by a magnitude 7.5 quake than a 6.1
+quake. 
+\ \\
+
+7.) Convert the following strings to numbers using the str2num()
+function. What happens?
+
+\begin{center}
+\begin{tabular}{l c r}
+a) '42' & b) 'hello' & c) 'h' \\ d) '4.2' & e) '4/2' & f) 'cos(pi)'
+\end{tabular}
+\end{center}
+
+8.) Convert the following numbers to strings using num2str()
+function. What happens? Using the length function compute the length of
+each string.
+
+\begin{center}
+\begin{tabular}{l c r}
+a) 42 & b) -15 & c) exp(1) \\ d) 4.2 & e) 4/2 & f) cos(pi)
+\end{tabular}
+\end{center}
+
+9.) Using the function exist() test whether or not these variables
+exist. Note depending on how you save your workspace you may get
+different answers however verify the output using whos.
+
+\begin{center}
+\begin{tabular}{l c r}
+a) x & b) y & c) z
+\end{tabular}
+\end{center}
+
+If they do exist using the disp() function print the following to the command
+window:
+\ \\
+
+Yes the variable \_\_\_\_\_ exists.
+\ \\
+
+10.) Type this matrix in MATLAB.
+\ \\
+\begin{equation} \nonumber
+A = \begin{bmatrix} 2 & 7 & -3 & 9 \\ -3 & 5 & 15 & 3 \\ 4 & 11 & 8 &
+  13 \\ 16 & 4 & -5 & -11
+  \\ 5 &-2 &18 &3 \end{bmatrix}
+\end{equation}
+
+Use MATLAB to answer the following
+questions. 
+\ \\
+
+a) Create a vector consisting of the elements in the third column of
+{\bf A}.
+
+b) Create a vector consisting of the elements in the second row of
+{\bf A}
+
+c) Create a submatrix encompassing the lower right 3x3 matrix only.
+
+d) Find the value of $a_{32}$.
+\ \\
+
+11.) Given the matrices
+
+\begin{equation} \nonumber
+\begin{matrix}
+A = \begin{bmatrix} 3 & 2 & 4 \\ 1 & 5 & -3 \\ 4 & -10 & 0\end{bmatrix} &
+B = \begin{bmatrix} 11 & 0 & -3 \\ 5 & -12 & 4 \\ 2 & 3 & 1\end{bmatrix} &
+C = \begin{bmatrix} 7 & 15 & 1 \\ 10 & 3 & -2 \\ 9 & -5 & 8\end{bmatrix} &
+\end{matrix}
+\end{equation}
+
+Compute the following. Check your work by hand.
+\ \\
+
+a) Compute {\bf A}+{\bf B}+{\bf C}
+
+b) Compute {\bf A}-{\bf B}-{\bf C}
+
+c) Does 5({\bf A} + {\bf C}) = 5{\bf A} + 5{\bf C}?
+
+d) Does {\bf A}*{\bf C} = {\bf C}*{\bf A}?
+
+e) Does ({\bf A}+{\bf B})$^T$ = {\bf A}$^T$ + {\bf B}$^T$?
+
+f) Does {\bf A}/{\bf B} = {\bf A}./{\bf B}?
+\ \\
+
+12.) Use matrices to solve for x,y and z.
+
+\begin{equation} \nonumber
+\begin{matrix}
+5x-3y+4z = 41 \\
+12x + 6y -7z = -26 \\
+-4x + 2y + 6z = 14 
+\end{matrix}
+\end{equation}
+\ \\
+
+Check your answer by hand.
+\ \\
+
+13.) Plot the equation below. Use the bounds [-2 2]. Label your
+axes, make a title, turn on the grid and make the background of your
+plot white. Plot a circle where the graph crosses the x axis. 
+
+\begin{equation} \nonumber
+y = 5x^3 + 2x^2 - 5x - 20
+\end{equation} 
+
+14.) Plot the equation from above. Use the bounds [-2 2]. Label your
+axes, make a title, turn on the grid and make the background of your
+plot white. Plot a circle where the graph crosses the x axis. Is this
+the same as your answer in problem 13?
+\ \\
+
+15.) Assume that an aircraft is flying at a certain speed (mi/hr) for
+4 different legs. Assume that this speed is constant for a certain
+amount of time as given by the table below.
+\ \\
+
+\begin{tabular}{l c c c r}
+Leg & 1 & 2 & 3 & 4 \\
+Speed (mi/hr) & 200 & 250 & 400 & 300 \\
+Time (hr) & 2 & 5 & 2.5 & 1.2
+\end{tabular}
+\ \\
+
+a.) Input all the data into a cell array including the table
+header. For example, the first row should read:
+\ \\
+
+aircraft\_data = \{'Leg',1,2,3,4\};
+\ \\
+
+b.) Compute the distance traveled by the aircraft in each leg using
+the cell array you defined in part a.
+
+d.) Input all data into a structure assuming the
+following fields: 'Leg', 'Speed\_mph' and 'Time\_hr'. 
+
+e.) Compute the distance traveled and add a field to the structure
+from part d called 'Distance\_mi'
+\ \\

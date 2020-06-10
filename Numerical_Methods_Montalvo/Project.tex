@@ -1,0 +1,355 @@
+\section{ME 228 - FINAL PROJECT - Due April 24th, 2015}
+
+This assignment is the final project indicated on your syllabus that
+will be 10\% of your grade. In this assignment you and your team will
+be required to use the engineering design method to answer a certain
+problem in the engineering world. Some of the projects include data
+analysis, animation and even video game design. You must write all
+code by yourself however special consideration will 
+be given since some of these projects are tougher than others. 
+
+There are about 60 students between both classes and 10 projects thus each
+group will consist of 5-6 members. Given the fact that one computer code
+will be written, most likely two or three students will be responsible
+for the code therefore, the other students should be tasked with
+creating the slide presentation and written report. Note, most of
+these codes are modular and can be split between members. The presentation
+will be a super quick 10 minute presentation given on April 24th and
+April 27th. You must have your presentation and report due by the 24th
+since presentations will be drawn at random.  
+
+Your task  for spring break is to look over the projects below and do 
+as much research as you can about each project. In addition, you want
+to start thinking about who you want in your group. When we return we
+will go over each project in detail and finalize our group
+members. You may then submit your votes via email including your team
+name and your top 5 projects you would like to work on.
+
+\subsection{\bf Timeline of Events}
+
+Final Project Released to Students - February 27th, 2015\\
+Projects Discussed in Detail - March 9th, 2015\\
+\ \\
+{\bf List of Members, Team Name and Top 5 Project Choices uploaded to Sakai - \underline{11:59PM} - March 13th, 2015 - One email per group is fine}\\
+\ \\
+Projects Assigned to Each Specific Group - March 16th, 2015\\
+\ \\
+{\bf Final Report, Presentation and MATLAB Code uploaded to Sakai - \underline{10:00AM} - April 24th, 2015}
+
+\subsection{\bf List of Deliverables - 100 pts}
+
+Member List and Team Name - 10 pts\\
+Final Report - 40 pts\\
+10 Minute Presentation - 30 pts\\
+MATLAB Code - 20 pts
+
+\subsection{\bf Final Report Outline - 40 pts}
+
+Your final report will be much like the homework. The outline of the
+report is given below.
+
+\begin{enumerate}[I]
+  \setlength\itemsep{-2pt}
+
+  \item Introduction and Problem Statement
+
+  \item Mathematical Model - Explanation of Theory
+
+  \item Simulation Setup - What data did you require?
+
+  \item Results - Explain your simulation results or data analysis or
+    video game
+
+  \item Conclusion
+
+  \item References
+   
+  \item Appendix - MATLAB Code
+
+\end{enumerate}
+
+\subsection{Final Report Grading Rubric}
+
+\begin{enumerate}[A]
+  \setlength\itemsep{-2pt}
+
+  \item Sources - All sources (information and graphics) are
+    accurately documented in the desired format.
+
+  \item Diagrams and Illustrations - Diagrams and illustrations are
+    neat, accurate and add to the reader's understanding of the topic
+
+  \item Organization - Information is very organized with well
+    constructed paragraphs and subheadings
+
+  \item Amount of Information - All topics are addressed and all
+    questions answered with at least 2 sentences about each
+
+  \item Quality of Information - Information clearly relates to the
+    main topic. It includes several supporting details and/or
+    examples.
+
+  \item Mechanics - No grammatical, spelling or punctuation errors.
+
+\end{enumerate}
+
+\subsection{Final Presentation - 40 pts}
+
+The final presentation will be a quick, informal 10 minute presentation
+given by a minimum of 2 members in your group. Since it is informal
+there is no need to dress up. The recommendation is usually 1
+minute per slide thus you're looking at perhaps 8 slides for 8 minutes
+and then 2 minutes of Q\&A. Your presentation should mirror your final
+report. A guide of slides has been created below note however that
+this is just a guide and your slides might be different. {\bf DO NOT
+  PUT YOUR MATLAB CODE IN THE PRESENTATION}
+
+\begin{enumerate}[1]
+\setlength\itemsep{-2pt}
+
+  \item Title Slide
+
+  \item Description of Topic (1)
+    
+  \item Description of Topic (2)
+
+  \item Mathematical Model (1)
+
+  \item Mathematical Model (2)
+
+  \item Explanation of Results (1)
+
+  \item Explanation of Results (2)
+
+  \item Explanation of Results (3)
+
+  \item Final Slide - Open the Floor for Questions
+   
+\end{enumerate}
+
+\subsection{\bf List of Projects}
+
+\subsubsection{The Pendulum Problem}
+
+Assume for the moment you have a standard
+pendulum with one degree of freedom (the angle of the pendulum). It
+is possible to write the equations of motion of a pendulum using the
+equation below.
+
+\begin{equation}
+  m L^2 \ddot{\theta} = -m g L sin(\theta) - c \dot{\theta} + T(t)
+\end{equation}
+
+Your task is to simulate the system above using Euler's Method and
+plot the angle and angular velocity as a function of
+time. Furthermore, you must linearize the system using forward
+finite differencing and midpoint finite differencing assuming an
+equilibrium point of 0 and $\pi$. With this linear model compute the
+eigenvalues of the system 
+and comment on the stability of the system. Furthermore, using this
+linearized model you must simulate all three models and 
+compare the results of each model and comment on your
+results. Finally, assume you have a sensor that can measure $\theta$
+and $\dot{\theta}$. Create a controller T(t) that will stabilize the
+system at the unstable equilibrium point 
+
+\subsubsection{Output Error Method}
+
+The Output Error Method is a way to solve for unknowns where there is
+no analytical solution available. For example, let us examine a simple
+paper airplane launched of a cliff. The equations of motion are
+\begin{equation}\nonumber
+\begin{Bmatrix}
+\ddot{x} \\ \ddot{z} 
+\end{Bmatrix}
+= 
+\begin{Bmatrix} 0 \\ g \end{Bmatrix} - \frac{1}{2m}\rho\sqrt{\dot{x}^2+\dot{z}^2}S \begin{Bmatrix} \dot{x}C_X
+  \\ \dot{z}C_Z \end{Bmatrix}
+\end{equation}
+I will provide the actual data $z(t)$ and $x(t)$ in a table format. Then assume that
+the initial conditions and all parameters are given except $C_X$ and
+$C_Z$. Your task is then to compute a multi-dimensional optimization
+routine using the Newton-Raphson technique to estimate $C_X$ and
+$C_Z$. The Newton-Raphson technique can be written using the formula
+below.
+
+\begin{equation}
+\vec{v}_{n+1} = \vec{v}_n + [\nabla^2 E_n]^{-1}\vec{\nabla} E_n
+\end{equation}
+
+\noindent where E is the error between the tabular data and the
+simulated data obtained from numerically integrating the equations of
+motion from above and $\vec{v} = [C_X,C_Z]^T$
+
+\subsubsection{Lifting Line Theory}
+
+The lift on a wing can be approximated assuming the wing is split into
+N panels. Each panel produces its own lift by creating a horseshoe
+vortex at the panel and can be computed using the circulation formula
+below. 
+\begin{equation}\label{e:kutta}
+  \Gamma_n = C_{Ln} c_n V_{n}/2
+\end{equation}
+where the lift coefficient $C_{Ln}$ at each panel is given by 
+\begin{equation}\label{e:liftdrag}
+C_{Ln} = C_{L0n} + C_{L\alpha n}\alpha_n
+\end{equation}
+The accuracy of this model increases as you increase the number of
+panels on each wing. There are a few more equations required to
+compute everything in question however the main property of these
+vortices is that each vortex interacts with each other. Thus, the task
+requires the program to solve for all lift coefficients and
+circulations ($\Gamma_n$) simultaneously. This requires the use of a
+modified simple fixed point iteration formula to converge on the
+system. Your team will need to compute the lift for a given wing as a
+function of the number of panels and then compute the optimal location in the x-y
+plane for another wing to be to increase the lift on the wing to a
+maximum. This maxima optimization can be done using a simple grid
+search. 
+
+\subsubsection{Aircraft Steady State Controller}
+
+I will provide the derivatives routine for a six-degree of freedom aircraft
+required to simulate a fixed wing aircraft. Your task will be to
+develop a simple PD controller to stabilize the aircraft. A PD
+controller can be written using the equation below where e is the
+error between your state and your command.
+
+\begin{equation}
+u = K_p e + K_D \dot{e}
+\end{equation}
+
+Although simple here, an aircraft has 4 control surfaces thus 4 PD
+controllers will need to be created. In addition, aircraft typically
+operate on an inner-loop, outer-loop control system. The control
+engineer must design an inner-loop control law in addition to the
+outer-loop control law. 
+
+\subsubsection{Rope Simulation}
+
+A rope can be approximated using a series of simple spring mass
+dampers. That is, it is possible to break a rope into numerous
+particles and place a spring/damper system in between each
+particle. The equations of motion of one particle are then simply
+\begin{equation}
+\begin{Bmatrix} \ddot{x}_n \\ \ddot{y}_n \end{Bmatrix} = \begin{Bmatrix} 0
+  \\ -g \end{Bmatrix} + \frac{1}{m_n}\begin{Bmatrix} Fx_{n-1} + Fx_{n+1}
+  \\ Fz_{n-1} + Fz_{n+1} \end{Bmatrix}
+\end{equation}
+where the force between particles is equal to
+\begin{equation}
+\begin{Bmatrix} Fx_{n} \\ Fz_{n} \end{Bmatrix} = \begin{Bmatrix}
+  -k(x_{n+1} - x_{n}) - c(\dot{x}_{n+1} - \dot{x}_{n}) \\ -k(z_{n+1} -
+  z_{n}) - c(\dot{z}_{n+1} - \dot{z}_{n}) \end{Bmatrix}
+\end{equation}
+Your task will be to simulate a rope of at least 10 particles fixed at
+two ends and create an animation of the simulation.
+
+\subsubsection{Heat Equation}
+
+The flow of heat through a pipe can be simulated using the standard 1D
+pipe flow equations as shown below. 
+\begin{equation}
+\frac{\partial u_n}{\partial t} = \frac{k}{c_p\rho}\frac{\partial^2
+  u_n}{\partial x^2}
+\end{equation}
+In order to simulate this equation you must discretize the pipe into
+multiple elements and use finite differencing to compute the second
+derivative of x while using Euler's method to compute the time
+derivative of u. Your task is then to simulate the flow of heat
+through a pipe when the initial temperature of one end is really
+hot. In order to plot your results you can take a few snapshots of the
+temperature as a function of position along the pipe or you can
+animate the temperature as a function of time.
+
+\subsubsection{Simulate a Car}
+
+Cars can be a lot simpler than airplanes and can be approximated as 1-D
+vehicles however they need to operate in the vicinity of other
+vehicles. Your task is to simulate multiple vehicles traveling down
+the highway while not colliding with each other. The caveat is that
+each vehicle will probably be traveling at different speeds. Assume
+you can measure the distance between each vehicle as well as the
+velocity of each vehicle. The simple equation for a 1D ground
+vehicle can be approximated using the equation below.
+\begin{equation}
+\ddot{x} = F(t) - m g \mu 
+\end{equation}
+You can be as creative as possible when it comes to the control laws
+here including forcing all vehicles to travel the same speed or even
+changing lanes if you think that is better. A candidate example would
+be all cars stopped at a red light and the light changed to green. 
+
+\subsubsection{Create a Unique Video Game}
+
+I'm slightly afraid to put this as a project mostly because of how
+open ended it is however I'd like to see how creative some of you can
+be. The task for this project is to create a MATLAB video game. The
+game must have at least 5 keyboard inputs with a 
+physics based background. If you don't want any keyboard inputs I will
+accept a video game that is more puzzle oriented and requires mouse
+click instead of keyboard inputs. Since this project is so open ended we will
+probably have to have a few sessions to decide what your game will
+do. {\bf Multiple teams can work on this one provided they develop a
+  different game}.
+
+\subsubsection{Large Data Analysis} 
+
+Most of what engineers do is analyze data. The projects above involve
+creating a model that is used to draw conclusions about different
+systems. However, it is possible to import massive data sets inside
+MATLAB and process the data to compute interesting results and draw
+conclusions. For this project you have the option of choosing a large
+data set and using at least two numerical methods to analyze the
+data. Furthermore, make sure to create figures and plots to support
+your analysis. {\bf Again, this is another open ended project therefore
+multiple teams can work on this one.} I've listed a few large data sets
+below.
+
+\begin{enumerate}
+
+\item UltraSkate 2015 - There is a skateboard race that has been held
+  for the past 3 years. The task of each racer is to complete as many
+  laps on a indy 500 track in Miami in 24 hrs. The world record is
+  held by Andrew Andras who completed 283.24 miles in 24 hrs. All
+  racers wear a wrist band that logs each lap. The results are
+  tabulated at this website here.
+
+  \href{http://jms.racetecresults.com/results.aspx?CId=16370\&RId=121}{UltraSkate
+  2015 Results - http://jms.racetecresults.com/results.aspx?CId=16370\&RId=121}
+
+  You can do alot of analysis with this data like plotting laps times
+  as a function of time or numerically differentiating the position
+  curve to get velocity as a function of time. I have a few friends
+  who did this race this year including, Jeff Crowe and Jude
+  Breaux. I'd like to see a full analysis of their race as well as a
+  few of the top racers. I suggest creating a script that can analyze
+  a racer and then you can pretty much analyze everyone in the race. 
+
+\item Weather in Mobile - The website noaa.org has massive tables of
+  weather data for practically every city in the US. Since we live in
+  Mobile your task is to analyze whatever data you can find on the
+  noaa.org site about the weather in Mobile, AL. I did a bit of digging and found this website here
+  which links from noaa.org
+
+  \href{http://www.sercc.com/cgi-bin/sercc/cliMAIN.pl?al5483}{Mobile
+    Weather - http://www.sercc.com/cgi-bin/sercc/cliMAIN.pl?al5483}
+
+  Some ideas I have for the data is computing a polynomial fit to the
+  data or perhaps computing the time period with the largest
+  temperature variation. You could also try and plot multiple years if
+  you can find the data and create a time average of the data or
+  create a fourier series of the cyclical data. 
+
+\item {\bf Feel free to find large data sets of your own and analyze
+  them yourself}
+
+\end{enumerate}
+
+\subsubsection{Pick Your Own Project}
+
+This last project is a place holder in case you can come up with
+another project of your own. Perhaps you can simulate playing Texas
+Holdem or Blackjack which is technically a video game. Still, if you come up
+with an idea of your own I'd love to hear it.
+

@@ -1,0 +1,81 @@
+\subsection{Functions - Palm - Chapter 3}
+
+\begin{enumerate}
+
+\item {\bf Create a Function}
+
+You have already used a number of functions. When you use num2str,
+linspace or inv. These are all built-in MATLAB functions that take in
+a number of arguments and then outputs the result to the workspace. If
+is possible to create functions that do whatever you wish. For
+example, the following function computes the area of a circle.
+
+\begin{framed}
+
+function out = areac(in)
+
+out = in\textrm{\^}2*pi;
+
+\end{framed}
+
+The first line of the code is the function header. The variable out is
+the output of the function and areac is the name of the function and
+finally in is the name of the input variable. If we try and run this
+function from the editor MATLAB will throw an error. This is because
+the input variable in is undefined. You must run the function from the
+command window or a script
+
+$>>$ areac(5)
+
+will compute the area of a circle with a radius of 5.
+
+\item {\bf Nested Functions}
+
+It is possible to call a function within a function. The function
+below will use the function areac to compute the volume of a cylinder.
+
+\begin{framed}
+
+function out = areacyl(radius,height)
+
+out = areac(radius)*height;
+
+\end{framed}
+
+To call this function we then simply type
+
+$>>$ areacyl(5,4)
+
+which will compute the volume of a cylinder with a radius of 5 and a
+height of 4. Note that the following is also acceptable as well.
+
+$>>$ r = 5;
+
+$>>$ h = 4;
+
+$>>$ V = areacyl(r,h);
+
+This will save the volume of the same cylinder into a variable V. 
+
+\item {\bf Multiple Outputs}
+
+Finally it is possible to output multiple values. The function below
+computes the area of a circle and the volume of a cylinder.
+
+\begin{framed}
+
+function [Ac,Vcyl] = areacyl(radius,height)
+
+Ac = areac(radius);
+
+Vcyl = Ac*height;
+
+\end{framed}
+
+To call this you would need to use the brackets to accept two
+variables.
+
+$>>$ [A,V] = areacyl(r,h);
+
+\end{enumerate}
+

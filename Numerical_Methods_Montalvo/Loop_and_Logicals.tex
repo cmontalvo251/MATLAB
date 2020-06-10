@@ -1,0 +1,123 @@
+\subsection{Loops and Logicals - Palm - Chapter 4}
+
+\begin{enumerate}
+
+\item \textbf{Logical Operators}
+
+For now MATLAB has just been a calculator. Howevever MATLAB is much
+more than that. One main thing that is done in MATLAB is to test
+whether or not something is true. If it is the code does one thing and
+then if not it does another. For example
+
+$>>$ x = (1 == 0)
+
+tests whether or not 1 is equal to zero. In this case it is not thus
+the value of x is false or 0. However it is possible to do other tests
+such as
+
+$>>$ x = linspace(0,10,5);
+
+$>>$ t = length(x) $>$ 2
+
+In this case the length(x) is 5 which is greater than 2 thus the value
+of t is true or 1. Notice that if you type in whos you will see that t
+is a logical variable rather than a double. A logical can only be a
+zero or a 1 thus it only needs 1 byte rather than 8 bytes. The other
+logical tests are $>=$, $<=$, $\sim=$. The last is 'not equal to'.
+
+\item \textbf{If/Else/End Statements}
+
+If/else/end statements are called logical statements. They are
+typically used in a script. The basic structure of an if statement is
+as follows
+
+if {\it statement}
+
+~~~~~~{\it execute this block of code if true}
+
+else
+
+~~~~~~{\it execute this block of code if false}
+
+end
+
+For example the block of code below is a script that uses the
+if/else/end structure to do one thing or the other. Note that this
+function takes one input but has no outputs.
+
+\begin{framed}
+
+function logicals(N)
+
+x = linspace(0,10,N);
+
+if length(x) $>$ 5
+
+~~~~~~~disp('The vector is longer than 5')
+
+else
+
+~~~~~~~disp('The vector is shorter than or equal to 5')
+
+end
+
+\end{framed}
+
+Try coding this example and see what it does for different values of N.
+
+\item \textbf{For Loops}
+
+A for loop has the following structure
+
+for {\it index = start:increment:end}
+
+
+end
+
+The block of code above will create an index that starts at the
+variable start, increments by increment and stops at end. For
+example the code below will add up the numbers from 1 to 10
+
+\begin{framed}
+I = 0;
+
+for idx = 1:1:10
+
+~~~~~~~I = I + idx;
+
+end
+
+\end{framed}
+
+\item \textbf{While Loops}
+
+A while is used when you don't know how far you are looping. For
+example, assume you want to loop until the square of a number exceeds
+100. Then you would need a while loop. The code below will stop when
+the square of the index exceeds 100. Note that you will have to keep
+track of the index rather than the for loop which does it
+intrinsically.
+
+\begin{framed}
+
+I = 0;
+idx = 1;
+
+while idx*idx $<=$ 100
+
+~~~~~~I = idx;
+
+~~~~~~idx = idx + 1;
+
+end
+
+\end{framed}
+
+Running the script above will stop when idx = 11 since 11 squared is
+greater than 100. The value of I will be 10 however since the code
+will break out of the loop before I is set to 11. Try it out and see
+for yourself.
+
+
+
+\end{enumerate}

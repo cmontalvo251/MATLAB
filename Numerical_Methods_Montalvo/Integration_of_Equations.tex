@@ -1,0 +1,106 @@
+\subsection{Integration of Equations - Chapter 22}
+
+\begin{enumerate}
+
+\item {\bf Richardson's Extrapolation}
+
+  Recall that the error from the trapezoidal rule is given by
+  
+  \begin{equation}
+    E_T = \frac{-1}{12 N^2} \bar{f}''(B-A)^3
+  \end{equation}
+
+  We know that moving to a higher order method can increase the
+  accuracy. However because of the law of diminishing returns it is
+  not always practical to move to a higher order method. Thus it is
+  useful to write the actual computed value as a ratio from 1
+  increment to another. That is it is possible to write
+
+  \begin{equation}
+    I = I(N_1) + E(N_1)
+  \end{equation}
+
+  where $I(N_1)$ is the solution of the trapezoidal rule for $N_1$
+  intervals. Because of the method certain errors are accrued as we've
+  seen and is given as $E(N_1)$. Now it is equally valid to assume that
+  $N_2 = 2N_1$ then
+
+  \begin{equation}
+    I = I(N_2) + E(N_2)
+  \end{equation}
+
+  Thus, $I(N_1) + E(N_1) = I(N_2) + E(N_2)$. The ratio of errors can
+  then be written as
+
+  \begin{equation}
+    \frac{E(N_1)}{E(N_2)} = \left(\frac{N_2}{N_1}\right)^2
+  \end{equation}
+
+  substituting this into our two equations of I and solving for
+  $E(N_2)$ we have
+
+  \begin{equation}
+    E(N_2) = \frac{I(N_1)-I(N_2)}{1-\left(\frac{N_2}{N_1}\right)^2}
+  \end{equation}
+
+  we can then plug this into the equation involving $N_2$ and collect
+  terms to arrive at
+
+  \begin{equation}
+    I = \frac{4}3 I(N_2) - \frac{1}3 I(N_1)
+  \end{equation}
+
+  Remember that $N_2 = 2N_1$. The result of this derivation is that is
+  possible to compute $I(N_2)$ and $I(N_1)$ and obtain a more
+  accurate result of I. It can be shown that if $I(N_1)$ is of
+  $O(\Delta x^2)$, I is $O(\Delta x^4)$. Essentially you have
+  increased the order of the method without actually using another
+  method.
+
+  \item {\bf Romberg Integration}
+
+    Romberg Interpolation is simply an extension of Richardson's
+    Extrapolation. 
+
+    \begin{equation}
+      I_{j,k+1} = \frac{4^k I_{j+1,k} - I_{j,k}}{4^k - 1}
+    \end{equation}
+
+    j is the interval number and k is the order of the method. The
+    trapezoidal method is of order 1 thus k = 1. When k = 1 and j = 1, Romberg
+    integration reduces to 
+
+    \begin{equation}
+      I_{1,2} = \frac{4 I_{2,1} - I_{1,1}}{4 - 1}
+    \end{equation}
+
+    Here $I_{2,1}$ is $I(N_2)$ using the trapezoidal rule. $I_{1,1}$
+    is $I(N_1)$ using the trapezoidal rule. $I_{1,2}$ is the
+    equivalent of $I(N_1)$ using a second order method. The power of
+    Romberg Integration is that it does not stop there. It is possible
+    to increase k and j until you get the estimate you like. For
+    example, the table below shows the flow of Romberg Integration to
+    compute $I_{1,4}$.
+
+    \begin{center}
+      \begin{tabular}{c | c c c c c c c}
+        Interval & First Order & & Second Order & & Third Order & & Fourth
+        Order \\
+        \hline
+        $N_1$ & $I_{1,1}$ & $\longrightarrow$ & $I_{1,2}$ & $\longrightarrow$ &
+        $I_{1,3}$ & $\longrightarrow$ & $I_{1,4}$ \\
+        $N_2=2N_1$ & $I_{2,1}$ & $\nearrow$ & $I_{2,2}$ & $\nearrow$ &
+        $I_{2,3}$ &  $\nearrow$ \\
+        $N_3=2N_2$ & $I_{3,1}$ & $\longrightarrow$ & $I_{3,2}$ & $\nearrow$ &
+        &  \\
+        $N_4=2N_3$ & $I_{4,1}$ & $\nearrow$ & & &     &  \\
+      \end{tabular}
+    \end{center}
+
+    This shows that it is possible to obtain accuracy on the order of
+    $\Delta x^8$ by only using methods that have accuracy on the order
+    of $\Delta x^2$.
+
+\item {\bf Gauss Quadrature}
+
+\end{enumerate}

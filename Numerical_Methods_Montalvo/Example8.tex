@@ -1,0 +1,104 @@
+\subsection{Example Problems}
+
+\begin{enumerate}
+
+\item Write a routine that will use Polynomial Least Squares regression. The
+routine will have a function header like this
+\begin{framed}
+\textcolor{blue}{function} coeff = myregression(Y,X,N)
+\end{framed}
+\noindent where Y is the vector of sampled point $y_i$ and X is a vector of
+independent points $x_i$. N is the order of the fit. When N = 0, the
+fit is zero order, when N = 1 the fit is linear and when N = 2 the fit
+is quadratic. For the data below plot the data given on a figure and
+compute the least squares fit. Note, you will have to plot the data to
+figure out which order to pick. Pick an order that reduces to the
+least square error to a minimum. Once you have the fit, plot the fit on
+the graph and put the least square error in the title. 
+\ \\
+
+In modeling an oil reservoir, it may be necessary to find a
+relationship between the equilibrium constant of a reaction and the
+pressure at constant temperature. 
+
+\begin{equation}\nonumber
+\begin{matrix}
+K-value & Pressure \\
+7.5 & 0.635\\
+5.58 & 1.035\\
+4.35 & 1.435\\
+3.55 & 1.835\\
+2.97 & 2.235\\
+2.53 & 2.635\\
+2.2 & 3.035\\
+1.93 & 3.435\\
+1.7 & 3.835\\
+1.46 & 4.235\\
+1.28 & 4.635\\
+1.11 & 5.035\\
+1.0 & 4.435\\
+\end{matrix}
+\end{equation}
+
+\item Write a routine that will compute a 2nd-order planar fit. That
+  is, assume the form
+
+  \begin{equation}\nonumber
+    z = a_0 + a_1sin(2x) + a_2sin(2y)
+  \end{equation}
+
+  Use Gauss' equation to solve for the
+  coefficients and create a mesh of the solution. The data will be
+  provided in a text file with columns x,y and z. First plot the data
+  using blue stars. These can be used to solve for the coefficients
+  $a_0,a_1$ and $a_2$. To create a mesh use the following code. 
+
+  \begin{framed}
+    xest = linspace(-pi,pi,100); 
+
+    yest = linspace(-pi,pi,100);
+
+    [xx,yy] = meshgrid(xest,yest);
+
+    zz = a0 + a1*sin(2*xx) + a2*sin(2*yy);
+    
+    mesh(xx,yy,zz)
+  \end{framed}
+  Your results should have 1 graph with the provided data and the
+  mesh. You need to also include your coefficients in your answer as well.
+
+\item The data below describes the growth of a population following a
+  logistical model. This system is non-linear however the equation can
+  be converted to a linear system.
+
+  \begin{equation}\nonumber
+    \begin{matrix}
+    y = \frac{1}{1+e^{ax+b}} \\
+    z = 1/y - 1 \\
+    zz = ln(z)
+    \end{matrix}
+  \end{equation}
+
+  Use the equations above to solve for the coefficients a and b and
+  plot the solution on the same graph.
+
+  \begin{equation}\nonumber
+    \begin{matrix}
+      X & Y \\
+      -1.0 & 0.05 \\
+      -0.8 & 0.08 \\
+      -0.6 & 0.14 \\
+      -0.4 & 0.23 \\
+      -0.2 & 0.35 \\ 
+      0.0 & 0.50 \\
+      0.2 & 0.65 \\
+      0.4 & 0.77 \\
+      0.6 & 0.86 \\
+      0.8 & 0.92 \\
+      1.0 & 0.95
+    \end{matrix}
+  \end{equation}
+
+\end{enumerate}
+
+

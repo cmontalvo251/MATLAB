@@ -1,0 +1,233 @@
+\documentclass[11pt,a4paper,twoside,openright]{book}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{fullpage}
+\usepackage{pbox}
+\usepackage[usenames,dvipsnames]{color}
+%\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{wrapfig}							% allows wrapping text around figures
+%\usepackage{cite}
+%\usepackage[labelfont=bf]{caption}
+\usepackage{titlesec}
+\titleformat{\section}[block]{\large\bfseries}{\thesection}{1em}{}
+\usepackage{framed}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{setspace}
+
+\setlength{\marginparwidth}{0pt}
+%\geometry{legalpaper, margin=0.5in}
+
+
+ % Define commands to assure consistent treatment throughout document
+% \newcommand{\eqnref}[1]{(\ref{#1})}
+ \newcommand{\class}[1]{\texttt{#1}}
+ \newcommand{\package}[1]{\texttt{#1}}
+ \newcommand{\file}[1]{\texttt{#1}}
+ \newcommand{\BibTeX}{\textsc{Bib}\TeX}
+\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\thesubsection}{{\thesection}\Alph{subsection}.}
+\renewcommand{\thesubsubsection}{\alph{subsubsection}.}
+
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\beqn{\begin{matrix}}
+\def\eeqn{\end{matrix}}
+
+\begin{document}
+
+\begin{center}{\LARGE SOME USEFUL AND NOT SO USEFUL EQUATIONS}\end{center}
+
+\begin{tabular}{|l | l|}
+  \hline
+  Order of Operations & x = 1/(2+1)=0.333~vs~x=1/2+1=1.5 \\
+  \hline
+  Format & format long g for 15 significant digits \\
+  \hline
+  Variable Types & double = 8 bytes , char = 2 bytes \\
+  \hline
+  Bits to Bytes & 8 bits = 1 byte \\
+  \hline
+  Base10 to Base2  & bin2dec(), dec2bin() \\
+  \hline
+  Double to ASCII  & char(), double() \\
+  \hline
+  Double to Char  & num2str(), str2num() \\
+  \hline
+  Inputting Vectors & x = [1 2 3 4] \\
+  \hline
+  Inputting Matrices & x = [1 2; 3 4] \\
+  \hline
+  Transpose & x = x' \\
+  \hline
+  {\it start:increment:end} & x = 1:2:10 yields
+  [1 3 5 7 9] \\
+  \hline
+  {\it linspace(start,end,numpts)} & x =
+  linspace(1,10,5) yields [1 3.25 5.5 7.75 10] \\
+  \hline
+  Length Command & length(x) will compute the length of a vector \\
+  \hline
+  Matrices of Zeros and Ones & zeros(row,col), ones(row,col)
+  \\
+  \hline
+  Dot Operator & u = [1 2 3]; v = [1 2 3]; u.*v = [1 4 9] \\
+  \hline
+  Matrix multiplication & u = [1 2 3]; v = [1;2;3]; u*v = 14 \\
+  \hline
+  Reference Elements of an Array & u = [3 8 9]; u(3) is 9 \\
+  \hline
+  Reference Elements of a Matrix & A = [3 8 ;9 10]; A(2,1) is 9 \\
+  \hline
+  Reference Entire Row & A = [3 8 ;9 10]; A(:,1) is the first column
+  \\
+  \hline
+  Evaluating Functions & x = linspace(-pi,pi,100); y = sin(x) + 5; \\
+  \hline
+  Function Headers & function [out1,out2] =
+  name\_of\_function(in1,in2) \\
+  \hline
+  If/Else/End & \pbox{12cm}{if {\it statement} \\{\it execute this block of code if true}  \\  else \\ {\it execute this block of code if false}\\ end} \\
+  \hline
+  Logical Operators & $==,>=,<=,>,<,\sim=$ \\
+  \hline
+  Summation with a For loop & \pbox{12cm} {I = 0; \\ for idx =
+  1:2:10 \\ I = I + idx; \\ end} \\
+  \hline
+  Summation with a While Loop & \pbox{12cm}{I = 0; idx = 1;\\while idx $<=$ 10\\I = I+idx;\\idx = idx + 2;\\end}\\
+  \hline
+  Plotting & x = linspace(-pi,pi,100); y=sin(x); plot(x,y) \\
+  \hline
+  Meshing & \pbox{12cm}{x = linspace(-pi,pi,100);y =
+    linspace(-pi,pi,100);\\ $[$xg,yg] = meshgrid(x,y);zg = sin(xg.*yg);\\mesh(xg,yg,zg)}\\
+  \hline
+  Parts of the Computers &
+  CPU,Motherboard,GPU,RAM,HDD,I/O \\
+  \hline
+  Absolute Error & $|actual-computed|$ \\
+  \hline
+  Percent Error & $(Absolute Error)/actual$ \\
+  \hline
+  Base 10 to Binary & $15_{10} = 8 + 4 + 2 + 1 = 2^3 + 2^2 + 2^1 + 2^0
+  = 1111_2$ \\
+  \hline
+  Binary to Base10 & $110_2 = 1*2^2 + 1*2^1 + 0*2^0 = 4+2 = 6_{10}$\\
+  \hline
+  Capital Letters to ASCII & $A = 65_{10}, B = 66_{10}, etc$ \\
+  \hline
+  Lower Letters to ASCII & $a = 97_{10}, b = 98_{10}, etc$ \\
+  \hline
+  Examples of ASCII & $cat = [99_{10},97_{10},116_{10}] = 1100011_2,1100001_2,1110100_2$\\
+  \hline
+\end{tabular}
+
+\newpage
+
+\begin{tabular}{|l | l|}
+\hline
+Taylor Series & $f(t_{i+1}) \approx f(t_i) + f'(t_i)\Delta t +
+f''(t_i)\frac{\Delta t^2}{2!} +
+... + f^{(N)}(t_i)\frac{\Delta
+  t^N}{N!}$\\
+\hline
+Bi-Section Method & \pbox{12cm}{Define upper(xU) and lower(xL) bounds
+  \\ $x_{new} =
+  (xU+xL)/2$\\$if~f(x_{new})>0,x_U=x_{new}~else~x_L=x_{new}$}\\
+\hline
+Newton-Raphson & $x_{i+1} = x_i - \frac{f(x_i)}{f'(x_i)}$\\
+\hline
+Newton-Raphson (Optimization) & $x_{i+1} = x_i - \frac{f'(x_i)}{f''(x_i)}$\\
+\hline
+First-Order Forward Differencing & $f'(x_{i}) \approx
+\frac{f(x_{i+1})-f(x_i)}{\Delta x}$\\
+\hline
+First-Order Backward Differencing & $f'(x_{i}) \approx \frac{f(x_{i})-f(x_{i-1})}{\Delta x}$\\
+\hline
+First-Order Center Differencing & $f'(x_{i}) \approx \frac{f(x_{i+1})-f(x_{i-1})}{2\Delta x}$\\
+\hline
+First-Order Second Derivative & $f''(x_{i}) \approx \frac{f(x_{i+2}) -2 f(x_{i+1}) + f(x_i)}{\Delta x^2}$\\
+\hline
+Secant Method & Combine Newton-Raphson with First-Order Derivative \\
+\hline
+Reimmann Sum &  $x(t) \approx x_0 + \sum\limits_{i=1}^Nv(t_i) \Delta
+t$\\
+\hline
+Trapezoidal Rule & $I \approx \sum\limits_{i=1}^{N}\frac{1}2 (f(t_i)+f(t_i+\Delta t))\Delta t$\\
+\hline
+Euler's Method &  $f_2 \approx f_1 + \dot{f}_1\Delta t $\\
+\hline
+Runge-Kutta-4 & $\begin{matrix}
+y_{k+1} = y_k + \phi \Delta t~~~\phi = \frac{1} 6(k_1 + 2 k_2 + 2 k_3 + k_4) \\
+k_1 = f(t_k,y_k)~~~k_2 = f(t_k + \Delta t/2\\
+y_k + k_1 \Delta t/2)~~~k_3 = f(t_k + \Delta t/2,y_k + k_2 \Delta t/2) \\
+k_4 = f(t_k + \Delta t,y_k + k_3 \Delta t)~~~\dot{y} = f(t,y)
+\end{matrix}$\\
+\hline
+Determinant & if A = [a b;c d], det(A) = a*d-b*c \\
+\hline
+Inverse & $[A|I]$ perform rref to yield $[I|A^{-1}]$\\
+\hline
+Solve for Eigenvalues & det(sI-A) = 0\\
+\hline
+Solve for Eigenvectors & $(sI-A)\vec{v}=0$\\
+\hline
+Eigenvalue Decomposition & $A=V\Lambda V^{-1}$\\
+\hline
+Solution to ODEs & $\vec{x}(t) = a_1\vec{v}_1e^{\lambda_1 t} + \hdots +
+     a_N\vec{v}_Ne^{\lambda_N t} = \sum\limits_{n=1}^N a_n\vec{v}_n
+     e^{\lambda_n t}$\\
+\hline
+Alternate Solution to ODEs & $\vec{x}(t) = e^{At}\vec{x}_0$ \\
+\hline
+Heat Equation & $\frac{d^2 T}{d x^2} - h'(T-T_a) = 0$\\
+\hline
+FDM (Heat Equation) & $-T_{i-1} + (2+h'\Delta x^2)T_i - T_{i+1} = h'\Delta x^2 T_a$\\
+\hline
+2-D Heat Equation &  $\frac{\partial^2 T}{\partial x^2} +
+\frac{\partial^2 T}{\partial y^2} = 0$\\
+\hline
+FDM (2-D Heat Eq) & $T_{i+1,j} + T_{i-1,j} + T_{i,j+1} -
+4T_{i,j} + T_{i,j-1} = 0$\\
+\hline
+Time Dependent Heat Eq &  $k\frac{\partial^2 T}{\partial x^2} =
+\frac{\partial T}{\partial t}$\\
+\hline
+FDM (Heat Eq Time) & $T_i^{l+1} = T_i^l + \lambda (T_{i+1}^l - 2T_i^l
++ T_{i-1}^l)$\\
+\hline
+Crank-Nicolson & $-\lambda T_{i-1}^{l+1} +2(1+\lambda) T_{i}^{l+1} - \lambda
+    T_{i+1}^{l+1} = \lambda T_{i-1}^l + 2(1- \lambda)T_{i}^l + \lambda
+    T_{i+1}^l$\\
+\hline
+$\lambda$ & $\frac{k\Delta t}{\Delta x^2}$\\
+\hline
+Stiffness for a Bar Element & $\left[K_{(e)}\right] =
+k\left[ \begin{matrix} 1   &-1   \\  -1  &1 \end{matrix} \right]$\\
+\hline
+Stiffness for a Bar & $[K] = \sum\limits_{e=1}^n \left[K_{(e)}\right]$\\
+\hline
+Bar Equation & $[K]\vec{d} = \vec{F}$\\
+\hline
+FEA Heated Rods & $\frac{1}{x_2-x_1} \begin{bmatrix} 1 & -1 \\ -1 &
+  1 \end{bmatrix} \begin{Bmatrix} T_1 \\ T_2 \end{Bmatrix}
+= \begin{Bmatrix} -T^{'}_1 \\ T^{'}_2 \end{Bmatrix}
++ \begin{Bmatrix} \int\limits_{x_1}^{x_2} f(x) N_1 dx
+  \\ \int\limits_{x_1}^{x_2} f(x) N_2 dx \end{Bmatrix}$\\
+\hline
+\end{tabular}
+
+
+%% \input{FEA_Heat}
+
+%% \input{Least_Squares_Regression}
+
+%% \input{Interpolation}
+
+
+\end{document}

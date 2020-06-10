@@ -1,0 +1,271 @@
+\subsection{Arrays - Palm - Chapter 2}
+
+\begin{enumerate}
+
+\item \textbf{Inputting Arrays}
+
+Whenever you type a variable into MATLAB 
+
+$>>$ x = 1
+
+MATLAB will create an array. The variable x currently is a 1x1
+array. That is it has 1 row and 1 column. It is possible however to
+create a vector of numbers.
+
+$>>$ x = [1 2 3 4]
+
+This will create a vector with 1 row and 4 columns. It is possible to
+make the same vector with only 1 column by using a semicolon.
+
+$>>$ x = [1 ; 2 ; 3 ; 4]
+
+This will create a variable with 4 rows and 1 column. It is also
+possible to create a column vector by using the transpose value.
+
+$>>$x = [1 2 3 4]'
+
+The ' will transpose the vector. In order to create a matrix you
+simply combine the semicolons and spaces.
+
+$>>$ A = [1 2 ; 3 4]
+
+This will create a 2x2 matrix. It is also possible to create rules for
+vectors. For example, say you want all even number from 2 to 100. This
+can be accomplished by using the form
+
+\item \textbf{Linspace vs. Increment}
+
+{\it start:increment:end}
+
+$>>$ x = 2:2:100
+
+The line above will start at 2, increment by 2 and stop when it hits
+100. You can also use the linspace command which uses the form
+
+{\it linspace(start,end,number of elements)}
+
+$>>$ x = linspace(1,10,5)
+
+The line above will create a vector that starts at 1 and end at 10 but
+contains 5 elements.
+
+\item \textbf{Length Command}
+
+$>>$ L = length(x)
+
+Length will compute the number of elements in the vector. In this case
+L will be equal to 5. If you type whos in MATLAB you will see that x
+is a vector 1x5 and L is a 1x1 but its value is 5.
+
+\item \textbf{ Creating Empty Matrices}
+
+To create empty matrices you may use the zeros() and ones() command.
+
+$>>$ A = zeros(5,3)
+
+The line above will create a matrix of zeros with 5 rows and 3
+columns. 
+
+Note that adding matrices is very simple. 
+
+$>>$ B = zeros(5,3) + 5
+
+will create a matrix of zeros with 5 rows and 3 columns and then add
+the number 5 to every element in the matrix.
+
+\item \textbf{Add/Substract and Multiply/Divide}
+
+$>>$ C = A + B
+
+this will then add the contents of A to B. Similar results are seen
+for substraction. Multiplication is tricky. The following line will
+throw an error.
+
+$>>$ C = A*B $\leftarrow$ ERROR
+
+The reason is that A is a 5x3 and B is a 5x3. As such the inner matrix
+dimensions do not match.
+
+$>>$ x = [1 ; 3]
+
+$>>$ A = [1 2 ; 4 5]
+
+$>>$ b = A*x
+
+the lines above are totally valid because x is a 2x1 and A is a 2x2
+thus b is a 2x1. Type in whos to verify. 
+
+\item \textbf{Dot Operator}
+
+It may be beneficial to compute the square of the numbers from say 1
+to 10.
+
+$>>$ x = 1:1:10
+
+will create the numbers from 1 to 10 incrementing by 1.
+
+$>>$ x = x\textrm{\^}2 $\leftarrow$ ERROR
+
+This again will throw an error because x is a 1x10. A 1x10 times a
+1x10 does not have the inner matrix dimensions that match. In order to
+multiply these matrices you must use the dot operator.
+
+$>>$ x = x.\textrm{\^}2
+
+You can also use the dot operator for muliplication and division.
+
+$>>$ y = 2*ones(1,10)
+
+$>>$ z = x./y
+
+This will create a vector of ones (1x10) and then multiply each
+element by 2. Thus y will be a vector of 2's. z will then be every
+element in x divided by y. Try this out to see if it works.
+
+\item \textbf{Reference Elements of an Array}
+
+Finally you may find yourself trying to use the second row and third
+column of a matrix. 
+
+$>>$ A = magic(5)
+
+will create a 5x5 matrix using the magic algorithm. If you then wish
+to select the second element and third column you simply type
+
+$>>$ a32 = A(3,2)
+
+You can also grab the entire column by typing
+
+$>>$ a2 = A(:,2)
+
+which will grab the entire second column.
+
+\item {\bf Semicolons!}
+
+Notice that when you type
+
+$>>$ x = 0:0.01:100
+
+MATLAB will spit out a lot of numbers. When creating a script it is
+common practice to stop the output of computation by putting a plug on
+the computation. This is accomplished by using a semi-colon.x
+
+$>>$ x = 0:0.01:100;
+
+will not output anything to the Command Window.
+
+\item {\bf Solving Multiple Algebraic Equations}
+
+The task of solving the equation below is trivial to do by hand
+however it is easy to make simple mistakes.
+
+\begin{equation} \nonumber
+\begin{matrix}
+5x-3y+4z = 41 \\
+12x + 6y -7z = -26 \\
+-4x + 2y + 6z = 14 
+\end{matrix}
+\end{equation}
+
+In order to do this by hand we simply type 
+
+$>>$ A = [5 -3 4 ; 12 6 -7 ; -4 2 6]
+
+which will create an A matrix of the coefficients of our system. Then
+
+$>>$ b = [41;-26;14]
+
+which will create a vector of the solutions. Finally assuming the form
+Ax=b we can solve this by multiplying the left hand side by the
+inverse of A.
+
+$>>$ x = inv(A)*b
+
+\item {\bf Evaluating Functions}
+
+Assume you have the function $y = x^2cos(x/2)$ and you wish to
+evaluate the function at x = $\pi/4$. That would simply be
+
+$>>$ x = pi/4
+
+$>>$ y = x\textrm{\^}2*cos(x/2)
+
+However if you wish to evaluate the function over an interval say -pi
+to pi then you need to use vector math.
+
+$>>$ x = linspace(-pi,pi,100)
+
+which creates a vector of 100 elements from -$\pi$ to $\pi$. Then you
+can evaluate y using the dot operator.
+
+$>>$ y = x.\textrm{\^}2.*cos(x/2)
+
+Note that you do not need a dot operator when dividing by 2 because 2
+is a scalar.
+
+\item {\bf Other Arrays}
+
+There are two other types of arrays. One is a cell array and the other
+is a structure. I will go over them briefly here. 
+
+A structure is a bucket that holds multiple attributes of
+information. To make a structure you simply type in
+
+$>>$ computers.name = 'Toshiba'
+
+$>>$ computers.CPU = 3.9
+
+This will create a structure called computers. The structure has two
+attributes, name and CPU. If you would like to add another element to
+the structure simply type 
+
+$>>$ computers(2).name = 'Lenovo'
+
+$>>$ computers(2).CPU = 2.0
+
+You can then call the structure in two ways. You can list all
+attributes of an element by typing
+
+$>>$ computers(2)
+
+or you can list all the names of the computers by typing
+
+$>>$ computers.name
+
+Finally you can access the 1 computers CPU by typing in 
+
+$>>$ computers(1).CPU
+
+A cell array can be created which contains any all variable type
+embedded. For example
+
+$>>$ x = [43 56 77]
+
+$>>$ s = 'Hello'
+
+$>>$ u = 0
+
+$>>$ computers.name = 'Toshiba'
+
+$>>$ computers(2).name = 'Lenovo'
+
+creates 4 variables. The first is a double with 3 elements. The second
+is a string with 5 elements. The third is a double with 1 element and
+the last is a structure with 2 elements. These can be combined into a
+cell array by using curly braces \{\}.
+
+$>>$ c = \{x,s,u,computers\}
+
+Note however that the length of c is 4. Furthermore if you wish to
+access part of the cell array you need to use curly braces.
+
+$>>$ c\{1\}
+
+will output the contents of the first cell which in this case is x.
+\ \\
+
+{\bf Functions Learned}
+
+magic, ones, zeros, linspace, length, inv
+
+\end{enumerate}

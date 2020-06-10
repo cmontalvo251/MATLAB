@@ -1,0 +1,42 @@
+\subsection{Example Problems}
+
+\begin{enumerate}
+
+\item Write a MATLAB code that computes the inverse of a matrix using
+  gaussian elimination. Your function header should look like this 
+
+\textcolor{blue}{function} invA = myinv(A)
+
+where A is your input matrix of any size. Test it with three random
+matrices. Provide the answer in your assignment. You may not use
+inv(),rref() or \textrm{\^}(-1). You may use the eye() function to
+create the identity matrix. In your function check that the
+determinant of the matrix is not equal to zero using the det()
+function. If the determinant is equal to zero return a matrix of zeros
+and display 'The inverse of the matrix is undefined'.
+
+\item Using your inverse routine from above write a routine that will
+  solve a system of equations. For example, use it to solve the system
+  of equations below.
+
+\begin{equation}
+\begin{matrix}
+2u + v = -3 \\
+u - 5v = 2
+\end{matrix}
+\end{equation}
+
+Come up with two more random systems of equations including one with
+three variables (u,v and w) and use your routine to solve it. All
+system of equations can be written in the form
+
+\begin{equation}
+A \vec{x} = \vec{b}
+\end{equation}
+
+Using the form above your function header should look like the
+following header.
+
+\textcolor{blue}{function} x = my\_sys\_solve(A,b)
+
+\end{enumerate}

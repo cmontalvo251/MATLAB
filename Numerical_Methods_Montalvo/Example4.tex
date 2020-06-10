@@ -1,0 +1,167 @@
+\subsection{Example Problems}
+
+\begin{enumerate}
+
+\item Create a function that has the following function header. 
+
+\textcolor{blue}{function} [mass,volume,weight] = myellipse(name, major\_axis, minor\_axis,
+transverse\_axis,density)
+
+This function will compute the volume, mass, and weight(on earth) of
+an ellipse. Furthermore, place an if statement in the function that
+will display(using the disp() function) ``The ellipse: (blank) is too
+heavy'', if the ellipse if heavier than 5 kg. (Use SI units for
+everything) 
+\ \\
+
+\noindent Experiment with at least 3 different types of ellipses to
+ensure your function is working properly. Include your inputs and
+outputs in your document. 
+
+\item Create a function that adds up the entries of a vector. Here is
+  an example function header
+
+\textcolor{blue}{function} s = mysum(x)
+
+Remember you may not use the function sum() in MATLAB however you may
+use it to check your answers. Test this on 3 example vectors to
+ensure your functions are working properly.  
+
+\item Create a function that finds the minimum value in a vector. Here
+  is an example function header
+
+\textcolor{blue}{function} m = mymin(x)
+
+Remember you may not use the functions min() or find() in MATLAB
+however you may use them to check your answers. Test this on 3 example
+vectors to ensure your functions are working properly. 
+
+\item Use the method of loops to compute the fibonacci sequence until
+the number of digits in the sequence is more than 2 (so 100 or
+bigger). Save the sequence into a vector as you move through the
+sequence and include it in your document. The fibonacci sequence can be
+written using the equation below. 
+
+\begin{equation}
+\lambda_{i+1} = \lambda_{i} + \lambda_{i-1}
+\end{equation}
+
+To start the sequence assume that $\lambda_{-1} = 0$ and $\lambda_{0}
+= 1$. The first three steps of the sequence are shown below.
+
+\begin{equation}
+\begin{matrix}
+\lambda_{1} = \lambda_{0} + \lambda_{-1} = 1 + 0 = 1 \\
+\lambda_{2} = \lambda_{1} + \lambda_{0} = 1 + 1 = 2 \\
+\lambda_{3} = \lambda_{2} + \lambda_{1} = 2 + 1 = 3 \\
+\end{matrix}
+\end{equation}
+
+\item Assume I create a structure that chracterizes the properties of an
+ellipse. Assume that the current fields of the structure are:
+name, major\_axis, minor\_axis, transverse\_axis, and density. Create a function that will
+compute the volume, mass, and weight(on earth) of all ellipses in the
+structure and add it to a field called by a similar name and output it to the
+workspace. Furthermore, place an if statement in the function that
+will display ``The ellipse: (blank) is too heavy'', if the ellipse if
+heavier than 5 kg.
+\ \\
+
+\noindent Use the following lines of code to test your function (Notice the
+difference in units!)
+\ \\
+
+ellipses(1).name = 'Kids ball';
+
+ellipses(1).major\_axis = 21.59; \%cm
+
+ellipses(1).minor\_axis = 21.59; \%cm
+
+ellipses(1).transverse\_axis = 21.59; \%cm
+
+ellipses(1).density = 3.0; \%$g/cm^3$
+
+ellipses(2).name = 'Hindenburg'; 
+
+ellipses(2).major\_axis = 803.8/3.28; \%meters
+
+ellipses(2).minor\_axis = 135.1/3.28; \%meters
+
+ellipses(2).transverse\_axis = 135.1/3.28; \%meters
+
+ellipses(2).density = 1.2; \%$kg/m^3$
+\ \\
+
+\item The following website has some useful information about the
+orbit of the earth:
+\ \\
+
+``http://en.wikipedia.org/wiki/Earth's\_orbit''
+\ \\
+
+Assuming the Sun is located at 0,0 and the orbit of the earth
+is flat (2D). Plot the orbit of the earth around the sun. Where is the
+earth right now? Plot a large blue circle where the earth currently
+is. Assume today is September 3rd, 2014. Furthermore, plot a large
+yellow circle where the sun is.
+\ \\
+
+\item Create a function that will plot the trajectory of a
+sphere. Assume the inputs are the angle from the horizontal in radians
+and the speed in m/s. Neglect aerodynamic drag and assume the sphere is thrown on
+earth. Furthermore, assume the sphere is launched at time t = 0 and
+compute the time the ball hits the ground. Experiment with this
+function and determine the optimal angle from the horizontal that will
+throw the sphere the farthest assuming a constant speed. Then compute
+the optimal angle that will give the ball the most hang time for a
+given speed. Is it different than the farthest distance? Does this
+make sense?
+\ \\
+
+\end{enumerate}
+
+\subsection{Project}
+
+By now you must have solved some pretty difficult problems in your
+other classes. Every engineering problem can be cast into the form  \\
+\ \\
+dependent variable = function( independent variable,parameters)\\
+\ \\
+The example of computing the terminal
+velocity of a cat is a perfect example of this. Your task it to team
+up with 2 more individuals and write a MATLAB code to solve three
+problems from your other classes. \\
+\ \\
+The first step is to identify three problems that can be solved by
+hand but have parameters and independent variables that change. In the
+cat falling example, our parameters were the area and weight of the
+cat. We could perhaps keep the size of the cat fixed but vary the
+weight. This MATLAB code can then be used to compute the terminal
+velocity of the cat just by changing the weight of the cat.  \\
+\ \\
+Your deliverable for this assignment will be to write a report
+detailing your 3 functions. The sections included in your report will
+be the following \\
+
+\begin{enumerate}
+\item{{\bf Introduction}} 
+Explain what the problems are. Why do we care? Why
+is this important? Give some background on this type of problem. 
+\item{{\bf Mathematical Model}}
+Explain the theory on how these problems are
+solved. Include equations in your report. Do not screenshot equations
+or just type them in. You are engineers. It's time to learn how to use
+Equation Editor. Finally, include all pertinent data required to run
+your code. Are there fixed parameters that do not vary? Include them
+in this section. 
+\item{{\bf Results}}
+Explain your inputs to your code and your outputs. Do
+not copy and paste MATLAB output. Write your results in normal
+english. For example, "When the weight of the cat is 5 lbs the
+terminal velocity is 50 ft/s. If the weight of the cat is increased to
+10 lbs the terminal velocity of the cat is 80 ft/s".  
+\item{{\bf Appendix MATLAB Code}}
+Copy and paste your MATLAB code. This is
+the only place the word MATLAB should be. No supporting text required,
+simply copy and paste your code into this section. 
+\end{enumerate}

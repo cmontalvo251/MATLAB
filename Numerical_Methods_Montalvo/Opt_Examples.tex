@@ -1,0 +1,148 @@
+\subsection{Example Problems}
+
+\begin{enumerate}
+
+\item Solve the ladder problem using Grid Search, Newton-Raphson and
+  Gradient search. Plot the length of the ladder as a function of the
+  slope. 
+
+\item In MATLAB type {\it help fminbnd} and {\it help fminsearch}. Use
+  the help function to learn how to use these functions and use them
+  to solve the ladder problem. Compare your results to your own
+  numerical method. 
+
+\item Solve the Density and Temperature problem using Grid Search and
+  Gradient Search.
+
+\item You are asked to design a covered conical pit to store 50 $m^3$
+  of waste liquid. Assume excavation costs at $\$100/m^3$, side lining
+  costs at $\$50/m^2$, and cover costs at $25/m^2$. Determine the
+  dimensions of the pit that minimizes cost. If the slope is
+  unconstrained and if the side slope must be less than 45$^o$. Here
+  are some equations that might help you
+
+  \beq
+  \begin{matrix}
+  Excavation~Volume = \pi r^2 h/3\\
+  Side~Lining~Area = \pi r\sqrt{h^2+r^2}\\
+  Cover~Area = \pi r^2\\
+  \end{matrix}
+  \eeq
+
+  Create plots of Cost vs. Radius as well as cone angle
+  vs. radius. Solve the minimization problem using the built in MATLAB 
+  function fminbnd. Is the constraint a limiting factor? If so, what
+  is the radius with the constraint? 
+
+\item A company makes two types of products, A and B. These products
+  are produced during a 40-hr work week and then shipped out at the
+  end of the week. They require 20 and 5 kg of raw material per kg of
+  product, respectively, and the company has access to 9500 kg of raw
+  material per week. Only one product can be created at a time with
+  production times for each of 0.04 and 0.12 hr, respectively. The
+  plant can only store 550 kg of total product per week. Finally, the
+  company makes profits of \$45 and \$20 on each unit of A and B,
+  respectively. Each unit of product is equivalent to a kg.\\
+  \ \\
+  Create a mesh plot of the objective function and plot all constraint
+  equations on it. Evaluate all 
+  limiting cases by taking a look at your Pareto Frontier. Once you
+  have evaluated which limiting conditions is the minimum use the
+  fmincon function like we did in class to solve for the
+  solution. Note that fmincon does not exist in Octave so you will
+  have to team up with someone who owns MATLAB and solve the problem
+  that way. Plot a blue square on the solution of this problem just as
+  we did in class. 
+
+\item You are an engineer planning to airlift $M_t = 2000 kg$ worth of supplies
+  to people in need. The supplies are being dropped at an altitude of
+  $500 m$. The price of a parachute is given using the equation below
+
+  \beq
+  c_{chute} = 200 + 56l + 0.1A^2
+  \eeq
+  
+  where $l=\sqrt{r}$,$A=2\pi r^2$ and $r$ is the radius of the
+  parachute. It is possible to put all 2000 $kg$ worth of material
+  into 1 parachute however the parachute must be really big because
+  the velocity that the product strikes the ground must be less than
+  $20 m/s$ to ensure no one is injured and the product is not
+  damaged. We know from the previous section on Numerical Integration
+  that a parachute in free fall is governed by the equation below
+
+  \beq
+  \ddot{z} + (c/m)\dot{z} = g
+  \eeq
+
+  where $z$ is the altitude, $c=3$ is the drag coefficient and
+  $g=9.81$ is the gravitational constant on Earth. This equation can
+  be solved analytically to obtain $z(t)$ to compute when the
+  parachute collides with the ground. The time can then be substituted
+  into the velocity equation to ensure that the velocity is under $20
+  m/s$. However, it is also possible to break up the single parachute
+  into multiple chutes thereby decreasing the radius of each
+  parachute. The mass of each parachute than becomes $m=M_t/N$ and the
+  total cost of the mission is $Cost=Nc_{chute}$. Compute the number
+  of parachutes and radius of each parachute that minimizes the cost
+  of the entire mission. Create plots to support your answer.
+
+  {\bf Hint:} If you solve for the velocity analytically you should
+  obtain this equation below
+
+  \beq
+  v(t) = \frac{-gm}{c}(1-e^{-ct/m})
+  \eeq
+  
+  integrating one more time yields the position 
+
+  \beq
+  z(t) = z_0 - \frac{gm}{c}t + \frac{gm^2}{c^2}e^{-ct/m}
+  \eeq
+
+  Thus, rather than integrating the equations numerically until the
+  parachute hits the ground you can turn this problem into a root
+  finding problem to determine when the parachute collides with the
+  ground. 
+
+\end{enumerate}
+
+\subsection{Project}
+
+As you know every engineering problem can be cast into the form  \\
+\ \\
+dependent variable = function( independent variable,parameters)\\
+\ \\
+The problem is that alot of times the independent variable can
+change. So the question is what is the best solution? What is the
+criteria for optimal solutions? Cost? Weight? Size? It's up to you,
+you are the engineer. Your task is to find an optimization problem out
+in the world and figure out what the best solution is. Restrict
+yourself to a 2-D problem. 1D Problems will not be accepted. I
+encourage you to use fmincon in MATLAB if not you can try using a grid
+search and/or try N-R however N-R in 2D is pretty complex. \\
+\ \\
+Your deliverable for this assignment will be to write a report
+detailing your optimization problem. The sections included in your
+report will be the following:
+\begin{enumerate}
+\item{{\bf Introduction}} 
+Explain what the problems are. Why do we care? Why
+is this important? Give some background on this type of problem. 
+\item{{\bf Mathematical Model}}
+Explain the theory on how these problems are
+solved. Include equations in your report. Do not screenshot equations
+or just type them in. You are engineers. It's time to learn how to use
+Equation Editor. Finally, include all pertinent data required to run
+your code. Are there fixed parameters that do not vary? Include them
+in this section. 
+\item{{\bf Results}}
+Explain your inputs to your code and your outputs. Do
+not copy and paste MATLAB output. Write your results in normal
+english. For example, "When the weight of the cat is 5 lbs the
+terminal velocity is 50 ft/s. If the weight of the cat is increased to
+10 lbs the terminal velocity of the cat is 80 ft/s".  
+\item{{\bf Appendix MATLAB Code}}
+Copy and paste your MATLAB code. This is
+the only place the word MATLAB should be. No supporting text required,
+simply copy and paste your code into this section. 
+\end{enumerate}
