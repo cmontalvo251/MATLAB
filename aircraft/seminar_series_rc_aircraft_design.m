@@ -4,74 +4,101 @@ close all
 
 format bank
 
-%%%Weight Estimate
-weight_wing = 0.378;
-weight_structure = 0.740;
-weight_battery = 0.259;
+%%%%Wing Cube Loading - I get to decide this
+WCL = 9;
 
-weight = (weight_wing + weight_structure + weight_battery)*9.81
+%%%Weight Estimate (oz)
+weight_servo = 3;
+x_servo = 2; %%%in reference to the LE of the main wing
+weight_battery = 5.0; %%
+x_battery = -3;
+weight_esc = 4; %%%  Power supply 
+x_esc = -2;
+weight_motor = 4; %% and propulsion
+x_motor = -4;
+weight_prop = 3; %% Thrust
+x_prop = -4;
+weight_receiver = 3;
+x_receiver = 0;
+weight_control_horns_rods = 2;
+x_control_horns_rods = 0;
+weight_fuselage = 16;
+x_fuselage = 8;
+weight = (weight_servo+weight_battery+weight_esc+weight_motor+weight_prop+weight_receiver+weight_control_horns_rods+weight_fuselage);
+weight_lbf = weight/16;
 
-%%%I get to pick the Thrust to Weight Ratio
-TW = 1.2;
 
-%%%Calculate my Thrust
-T = TW*weight
+disp(['Weight = ',num2str(weight),' oz'])
 
-T_lbf = T/4.44
+%%%One Design point is to pick a motor and figure out it's thrust
+Thrust = 33; %%%Thrust tables online
+TW = Thrust/weight
+
+%%%This is another design point where you select the TW
+%TW = 0.8;
+%Thrust = TW*weight
+
 %%%From here you can go online and find a motor
 %%%That provides enough thrust. then you can compute the
 %%%weight more accurately given the motor/battery weight.
 
-%%%%Wing Loading - W/S
-WS_ozsqft = 15;
-WS = WS_ozsqft*4.44*(3.28^2)/16
-
-%%%Now we can compute what? Wing Area
-S = weight/WS
+%%%Now we can compute
+%%% WCL = W/S^(3/2)
+S = (weight/WCL)^(2/3)
 
 %%%Choose Aspect Ratio
-AR = (58^2)/(58*9)
+AR = 4.5
 
 %%%Can Compute Wingspan now
 b = sqrt(AR*S)
 
 %%%Can compute chord now
 c = S/b
+c_SI = c/3.28;
 
 %%%But first. Need a Flight Speed Regime
-V = 5:20;
+V_SI = linspace(5,20,100); %%%m/s
+V = V_SI*3.28; %%%ft/s
 
-%%%Also need altitude
-h = 0;
-rho = 1.225;
+%%%Density at altitude
+rho_SI = 1.225; %%%kg/m^3
+rho = 0.002378; %%%slugs/ft^3
 
 %%%Compute Re
-mu = 1.81e-5;
+mu = 1.81e-5; %%%SI units
 %format long g
-Re = rho * V * c / mu;
+Re = rho_SI * V_SI * c_SI / mu;
 
 %%%Mach Number
 a_inf = 330;
-M = V/a_inf;
-%%%Pick 0.05
+M = V_SI/a_inf;
 
-%%%Matrix for XFLR5
-[Re',M'];
+figure()
+plot(V_SI,M)
+figure()
+plot(V_SI,Re)
 
-%%%Pick an Airfoil - NACA 2414
+%%%MACH and RE NUMBER FOR XFLR5
+%%% M = 0.05
+%%% Re = 200000
+
+%%%Pick an Airfoil
 %%%Assume Re is 50,000 to 300,000
-alpha0 = -2.1*pi/180;
-alpha0_deg = alpha0*180/pi;
-a0 = 6.21; %%All from XFLR5
+
+%%%PICK OUT ALL OF THESE VALUES FROM XFLR5
+alpha0 = -5.0*pi/180; %%%ZERO LIFT AOA
+alpha0_deg = alpha0*180/pi
+Cla = 0.6/(-alpha0) %%%Lift curve slope
 
 %%%Find the Lift Curve Slope of the wing
-e = 0.9;
-a = a0/(1+a0/(pi*e*AR));
-a_deg = a*pi/180;
+e = 0.9; %%%Efficiency
+CLA = Cla/(1+Cla/(pi*e*AR))
+CLA_deg = CLA*pi/180;
 
 %%%Can find CL vs Alpha
-alpha_deg = linspace(-15,15,100);
-CL = a_deg*(alpha_deg-alpha0_deg);
+alpha_deg = linspace(-15,15,1000);
+alpha = alpha_deg*pi/180;
+CL = CLA_deg*(alpha_deg-alpha0_deg);
 
 figure()
 plot(alpha_deg,CL)
@@ -80,77 +107,49 @@ ylabel('CL')
 
 %%Now we can compute Angle of Attack as function of
 %%velocity
-AoA = 2*weight./(rho*V.^2*S*a) + alpha0;
-AoA_deg = AoA*180/pi;
-
+%%% L = W = 0.5*rho*V^2*S*CL
+%%% CL = 2*W/(rho*V^2*S)
+CL_req = 2*weight_lbf./(rho*(V.^2)*S);
 figure()
-plot(V,AoA_deg)
-ylabel('Angle of Attack (deg)')
-xlabel('Velocity (m/s)')
+plot(V,CL_req)
+xlabel('Velocity (ft/s)')
+ylabel('CL (L=W)')
+
+AoA_req_deg = CL_req/CLA_deg + alpha0_deg;
+AoA_req = AoA_req_deg*pi/180;
+figure()
+plot(V,AoA_req_deg)
+xlabel('Velocity (ft/s)')
+ylabel('AoA (deg)')
 
 %%%So for a given flight speed
 %%%How much thrust do we need?
 %%%Well Let's plot drag
-figure()
 Cd0 = 0.01; %%%This is the drag coefficient at zero lift
-Cdfit = 0.037;
-Clfit = 1.05;
-plot(0,Cd0,'bx')
-hold on
-plot(Clfit,Cdfit,'bx')
-plot(-Clfit,Cdfit,'bx')
-
-%%%Solve for k
-k = (Cdfit - Cd0)/(Clfit^2)
-Cl = linspace(-Clfit,Clfit,100);
-Cd = Cd0 + k*Cl.^2;
-plot(Cl,Cd,'r--')
-xlabel('Cl')
-ylabel('Cd')
+Cd2 = 0.037;
 
 %%%Now let's get the Wing Drag Coefficients
 CD0 = Cd0/(1+Cd0/(pi*e*AR))
+CD2 = Cd2/(1+Cd2/(pi*e*AR))
+CDf = 0.2; %%%Fuselage drag (get this from another program. SolidWorks, DATCOMM)
 
 %%%Now we can compute CD
-CD = CD0 + k*CL.^2;
+CD = CD0 + CD2*alpha.^2 + CDf;
 
 figure()
-plot(CL,CD)
-xlabel('CL')
+plot(alpha_deg,CD)
+xlabel('AoA (deg)')
 ylabel('CD')
 
 %%%%D = 0.5*rho*V^2*S*CD
 %%Vary flight speed from 5:20 and we've already done that
 %%%Compute AoA which we've done on line 82
 %%Using that AoA compute Cl
-CLflight = a*(AoA-alpha0);
+Thrust_req = 0.5*rho*V.^2*S.*(CD0 + CD2*AoA_req.^2 + CDf);
 figure()
-plot(V,CLflight)
-xlabel('Velocity (m/s)')
-ylabel('CL')
-%%%Now let's compute Drag Coefficient
-CDflight = CD0 + k*CLflight.^2;
-figure()
-plot(V,CDflight)
-xlabel('Velocity (m/s)')
-ylabel('CD')
-%%%Now Let's compute total Drag
-D = 0.5*rho*V.^2.*S.*CDflight;
-figure()
-plot(V,D)
-xlabel('Velocity (m/s)')
-ylabel('Drag (N)')
-
-%%%Lift to Drag Ratio
-figure()
-plot(V,CLflight./CDflight)
-xlabel('Velocity (m/s)')
-ylabel('L/D')
-
-figure()
-plot(AoA_deg,CLflight./CDflight)
-xlabel('Angle of Attack (deg)')
-ylabel('L/D')
+plot(V,Thrust_req*16)
+xlabel('Velocity (ft/s)')
+ylabel('Thrust (oz)')
 
 %%%Empennage design
 %%%Assume percentage of main wing
@@ -159,28 +158,11 @@ ARt = AR
 St = bt^2/ARt
 ct = St/bt
 
-%%%%Compute Center of Mass based on weight
-%%%of components
-%%%For this example we built the aircraft
-%%%and measured it in class
-xcg = (4/12)/3.28
+xcg = ((weight_servo*x_servo+weight_battery*x_battery+weight_esc*x_esc+weight_motor*x_motor+weight_prop*x_prop+weight_receiver*x_receiver+weight_control_horns_rods*x_control_horns_rods+weight_fuselage*x_fuselage)/weight)/12
 
-%%%%Determine location of Empennage
-lt = (18/12)/3.28
 %%%%Then compute the aerodynamic center
-%%%of the entire aircraft. Why?
-%%%Because I want xacwb to be bigger
-%%%Than xcg
-xacwb = (St*(c/4+lt)+S*c/4)/(St+S)
+xac = c/4
 
-%%%%Stability Margin
-Sm_inches = (xacwb-xcg)*3.28*12
+Sm = (xcg - xac)/c
 
-%%%Let's also compute stall speed
-Clmax = 1.5; %%%This would come from XFLR5
-CLmax = Clmax/(1+Clmax/(pi*e*AR))
 
-Vstall = sqrt(2*weight/(rho*S*CLmax))
-%%%If this is too fast
-%%%Add flaps or increase camber
-%%%Increase the size of wing
