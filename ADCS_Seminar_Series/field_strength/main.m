@@ -85,3 +85,16 @@ grid on
 xlabel('Distance From Surface (m)')
 ylabel('Mag Field (nT)')
 
+%%%%Let's assume we are JagSAT
+N = 84
+I = 0.04
+A = (20./100)*(20/100.)
+mu = N*I*A
+bfield_strength = C/(400*1000+R)^3
+bT = bfield_strength*10^(-9)
+torque = bT*mu
+
+%%%GTO
+bfield_strength = C/(35000*1000+R)^3
+bT = bfield_strength*10^(-9)
+torque = bT*mu
