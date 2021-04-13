@@ -2,17 +2,17 @@ clear
 clc
 close all
 
-A = [ 1 2 3;4 5 6;7 4 9]
+A = [ 1 2 3 4 10;4 5 6 7 11 ;7 4 9 10 12;11 12 13 10 13;2 5 8 10 15]
 
-N = 3;
+[r,c] = size(A);
+N = r;
 %%%What if you can't use eig?
 [v,s] = eig(A)
 
 %%%You need to find the eigenvalues
-char_eqn = charpoly(A);
-eigenvalues = roots(char_eqn);
+char_eqn = charpoly(sym(A))
+eigenvalues = roots(double(char_eqn));
 s_without_eig = diag(eigenvalues)
-
 
 %%%Find the eigenvectors
 
