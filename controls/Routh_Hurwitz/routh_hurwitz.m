@@ -6,7 +6,8 @@ close all
 %%%%%%INPUT COEFFICIENTS OF CHARACTERISTIC POLYNOMIAL HERE%%%%%
 %coeff = [1,-6,-7,-52];
 %coeff = [1,2,1];
-coeff = [1,6,11,6,200];
+coeff = [1,6,11,7,200];
+%coeff = [1,10,31,1030]
 %syms K - hey if you have the symbolic toolbox try this
 %coeff = [1,18,77,K]; 
 
@@ -19,6 +20,7 @@ end
 while length(first_row) <= 2
     first_row = [first_row,0];
 end
+disp('First Row')
 routh_table = [routh_table;first_row]
 %%%%Create the second row of the Routh Table
 second_row = [];
@@ -28,7 +30,8 @@ end
 while length(second_row) < length(first_row)
     second_row = [second_row,0];
 end
-routh_table = [routh_table;second_row];
+disp('Second Row')
+routh_table = [routh_table;second_row]
 routh_table_width = length(first_row);
 
 %%%Now create the next rows
@@ -43,20 +46,26 @@ end
 for loop_row = 1:required_rows_to_compute
     row = [];
     %disp(['Computing Row ',num2str(loop_row+2)])
-    divisor = routh_table(loop_row+1,1);
+    disp('Divide All Determinants by this var = ')
+    divisor = routh_table(loop_row+1,1)
+    %%THe left part of the determinant for a given row is constant
+    %Thanks Sumit Godara for pointing that out
+    %disp('Left Half Determinat')
+    left_half_det = routh_table(loop_row:loop_row+1,1);
     for col = 1:routh_table_width
         %disp(['Computing Column ',num2str(col)])
-        left_half_det = routh_table(loop_row:loop_row+1,col);
         if col == routh_table_width
             right_half_det = [0;0];
         else
             right_half_det = routh_table(loop_row:loop_row+1,col+1);
         end
-        both_det = [left_half_det,right_half_det];
+        disp('Determinant to be computed')
+        both_det = [left_half_det,right_half_det]
         value = -det(both_det)/divisor;
         row = [row,value];
     end
-    routh_table = [routh_table;row];
+    disp('Next Row of Routh Table')
+    routh_table = [routh_table;row]
 end
 
 %%%Check for stability
