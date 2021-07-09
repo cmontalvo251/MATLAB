@@ -6,10 +6,12 @@ close all
 %%%%%%INPUT COEFFICIENTS OF CHARACTERISTIC POLYNOMIAL HERE%%%%%
 %coeff = [1,-6,-7,-52];
 %coeff = [1,2,1];
-coeff = [1,6,11,7,200];
+%coeff = [1,6,11,7,200];
 %coeff = [1,10,31,1030]
-%syms K - hey if you have the symbolic toolbox try this
+syms K % - hey if you have the symbolic toolbox try this
 %coeff = [1,18,77,K]; 
+%or this
+coeff = [1,9,(K-10),2]
 
 %%%%Create the First Row of the Routh Table
 routh_table = [];
