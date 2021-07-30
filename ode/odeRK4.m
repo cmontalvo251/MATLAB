@@ -8,6 +8,8 @@ if flag > 1
   tout = 0;
   xout = 0;
   return
+else
+  disp(['Number of Vars = ',num2str(flag)])
 end
 tout = tspan(1):timestep:tspan(end);
 integrationsteps = length(tout);
