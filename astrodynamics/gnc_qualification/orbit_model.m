@@ -13,7 +13,6 @@ semi_major = (apogee+perigee)/2.0;
 T_orbit = 2*pi*semi_major^(3./2)/sqrt(G*MEarth);
 t = linspace(0,T_orbit,N);
 dt = t(2)-t(1);
-t = [t,t(end)+dt];
 
 %%%Assume we start at perigee
 x0 = perigee;
@@ -27,10 +26,11 @@ vely = hmom/perigee;
 velz = 0;
 stateinitial = [x0;y0;z0;velx;vely;velz];
 
-[t,stateout] = ode45(@Derivatives,t,stateinitial);
-x = stateout(:,1);
-y = stateout(:,2);
-z = stateout(:,3);
+%functionHandle,tspan,xinitial,timestep,extraparameters,next,quat
+[t,stateout] = odeK4(@Derivatives,[t(1) t(end)],stateinitial,dt,[],10,0);
+x = stateout(1,:);
+y = stateout(2,:);
+z = stateout(3,:);
 
 if flag
   plot3(x,y,z)
@@ -66,9 +66,9 @@ if rSat < REarth
   ydbldot = 0;
   zdbldot = 0;
 else
-  xdbldot = (-G*MEarth*x)/(rSat^3);
-  ydbldot = (-G*MEarth*y)/(rSat^3);
-  zdbldot = (-G*MEarth*z)/(rSat^3);
+  xdbldot = (-G*MEarth*(x/rSat))/(rSat^2);
+  ydbldot = (-G*MEarth*(y/rSat))/(rSat^2);
+  zdbldot = (-G*MEarth*(z/rSat))/(rSat^2);
 end
 
 dstatedt = [xdot;ydot;zdot;xdbldot;ydbldot;zdbldot];
