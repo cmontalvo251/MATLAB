@@ -15,6 +15,7 @@ psiE = atan2(y,x);
 latitude = 90-thetaE*180/pi;
 longitude = psiE*180/pi;
 rhokm = (rho)/1000;
+disp(['Computing Magnetic Field for ',num2str(length(x)),' points....'])
 for idx = 1:length(x)
 	[BN,BE,BD] = igrf('28-Sep-2019',latitude(idx),longitude(idx),rhokm(idx),'geocentric'); 
 	%%%Convert NED (North East Down to X,Y,Z in ECI frame)
@@ -26,3 +27,4 @@ for idx = 1:length(x)
 	ByI(idx) = BI(2);
 	BzI(idx) = BI(3);
 end
+disp('Done')
