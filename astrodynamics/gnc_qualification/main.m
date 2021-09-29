@@ -6,7 +6,7 @@ disp('GNC QUALIFICATION')
 
 %%USer defined parameters
 apogee = 600; %%km above surface
-perigee = 600; %km above surface
+perigee = 10000; %km above surface
 N = 1000;
 
 %%%Run the orbit model
@@ -21,6 +21,7 @@ ylabel('Y (m)')
 zlabel('Z (m)')
 grid on
 title('Orbit')
+axis equal
 %%%Plot Altitude
 altitude = sqrt(x.^2 + y.^2 + z.^2);
 figure()
