@@ -1,5 +1,0 @@
-#!/bin/bash
-
-#In order to make MATLAB version 2009 play your audio you need to open it using the following command
-
-padsp matlab
