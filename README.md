@@ -1,5 +1,8 @@
 MATLAB Fun Games over the years. 
 
+I have a textbook on MATLAB on my other Github repo:
+https://github.com/cmontalvo251/LaTeX/tree/master/Numerical_Methods_Montalvo
+
 Also avaiable on MATLAB File EXchange
 [![View Montalvo Supplemental Routines on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/73816-montalvo-supplemental-routines)
 
