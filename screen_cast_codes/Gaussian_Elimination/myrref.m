@@ -6,7 +6,16 @@ format short
 
 %A = [3 1 3;2 4 1;2 8 9];
 
-A = [0 0 1;1 2 3;0 1 -2];
+B = [ 1 3 4; 3 -1 2; 4 2 2]
+
+[v,s] = eig(B)
+
+si = s(1,1)
+vi = v(:,1)
+
+A = B - si*eye(3)
+
+%A = [0 0 1;1 2 3;0 1 -2];
 
 %%%Will not work if
 %%% 1 - det(A) = 0
@@ -55,23 +64,23 @@ disp(inv(A))
 disp('Using Gaussian Elimination')
 disp(augA(:,4:6))
 
-break
+%break
 %rref(augA)
 
 %%%%1st column
-augA(1,:) = augA(1,:)/augA(1,1)
-augA(2,:) = augA(2,:) - augA(1,:)*augA(2,1)
-augA(3,:) = augA(3,:) - augA(1,:)*augA(3,1)
+%augA(1,:) = augA(1,:)/augA(1,1)
+%augA(2,:) = augA(2,:) - augA(1,:)*augA(2,1)
+%augA(3,:) = augA(3,:) - augA(1,:)*augA(3,1)
 
 %%%2nd column
-augA(2,:) = augA(2,:)/augA(2,2)
-augA(1,:) = augA(1,:)-augA(2,:)*augA(1,2)
-augA(3,:) = augA(3,:)-augA(2,:)*augA(3,2)
+%augA(2,:) = augA(2,:)/augA(2,2)
+%augA(1,:) = augA(1,:)-augA(2,:)*augA(1,2)
+%augA(3,:) = augA(3,:)-augA(2,:)*augA(3,2)
 
 %%%3rd column
-augA(3,:) = augA(3,:)/augA(3,3)
-augA(1,:) = augA(1,:) - augA(3,:)*augA(1,3)
-augA(2,:) = augA(2,:) - augA(3,:)*augA(2,3)
+%augA(3,:) = augA(3,:)/augA(3,3)
+%augA(1,:) = augA(1,:) - augA(3,:)*augA(1,3)
+%augA(2,:) = augA(2,:) - augA(3,:)*augA(2,3)
 
 
 
