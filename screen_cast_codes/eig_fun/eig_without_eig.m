@@ -1,8 +1,11 @@
 clear
 clc
 close all
+pkg load symbolic
 
-A = [ 1 2 3 4 10;4 5 6 7 11 ;7 4 9 10 12;11 12 13 10 13;2 5 8 10 15]
+%A = [ 1 2 3 4 10;4 5 6 7 11 ;7 4 9 10 12;11 12 13 10 13;2 5 8 10 15]
+
+A = [ 1 3 4; 3 -1 2; 4 2 2]
 
 [r,c] = size(A);
 N = r;
@@ -11,7 +14,9 @@ N = r;
 
 %%%You need to find the eigenvalues
 char_eqn = charpoly(sym(A))
-eigenvalues = roots(double(char_eqn));
+eigenvalues = roots(double(char_eqn));at I, the undersigned, am unable to retrieve the Deactivation String and no longer have access to any MathWorks software on 247D01EF (247D01EF).
+
+
 s_without_eig = diag(eigenvalues)
 
 %%%Find the eigenvectors
@@ -24,8 +29,9 @@ s_without_eig = diag(eigenvalues)
 v_without_eig = zeros(N,N);
 for idx = 1:N
     si = eigenvalues(idx);
-    Atilde = (A - si *eye(N));
-    Atilde_red = rref(Atilde);
+    disp(['Attempting to find eigenvector for the following eigenvalue = ',num2str(si)]);
+    Atilde = (A - si *eye(N))
+    Atilde_rref = rref(Atilde)
     %det(Atilde)
 
     %vi = zeros(N,1);
@@ -39,10 +45,10 @@ for idx = 1:N
 
     %vi = [0.338 ; 0.7763 ; 1]
 
-    vi = [-Atilde_red(1:(N-1),N);1];
+    vi = [-Atilde_rref(1:(N-1),N);1]
 
     %%%MATLAB likes to normalize eigenvectors
-    vi = vi/norm(vi);
+    vi = vi/norm(vi)
     
     v_without_eig(:,idx) = vi;
 end
