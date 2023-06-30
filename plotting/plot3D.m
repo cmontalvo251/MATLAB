@@ -2,7 +2,6 @@ function plot3D(x,y,z,data,minr,maxr)
 %%%plot3D(x,y,z,data,minr,maxr) data x,y,z are all vectors and data is a 3
 %%%dimensional matrix. minr and maxr are the maximum radii of the
 %circles to plot
-
 [r,c,w] = size(data);
 
 maxF = max(max(max(data)))
